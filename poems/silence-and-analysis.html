@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>നിശ്ശബ്ദത — കവിതയും വ്യാഖ്യാനവും | ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ</title>
+<meta name="description" content="നിശ്ശബ്ദത — a poem by Claude with an essay on its logic, gender, and the Man of Reason. In Malayalam.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="നിശ്ശബ്ദത — കവിതയും വ്യാഖ്യാനവും">
+<meta property="og:description" content="ഒരു കവിതയും അതിന്റെ ഭ്രമാത്മക യുക്തിയെക്കുറിച്ചുള്ള ഒരു ഉപന്യാസവും.">
+<meta property="og:url" content="https://surendran2024.github.io/Articles/poems-co-authored-with-claude/silence-and-analysis.html">
+<meta property="og:locale" content="ml_IN">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12100d; --ink:#e9e3d6; --muted:#a39a8a; --line:#2b2620;
+    --accent:#e0915a; --gold:#cda45f; --card:#191510; --card2:#1d1812;
+    --serif:"Noto Serif Malayalam","Noto Serif Devanagari","Noto Serif",Georgia,serif;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  .crumbs{max-width:var(--maxw); margin:0 auto; padding:1.6rem 1.4rem 0;
+    font-family:"Noto Serif",Georgia,serif; font-size:.85rem;
+    display:flex; align-items:center; gap:.6rem; flex-wrap:wrap}
+  .crumbs a.home{background:var(--accent); color:#1a1208; font-weight:700; text-decoration:none;
+    padding:.42rem 1rem; border-radius:999px; letter-spacing:.02em; transition:background .2s ease}
+  .crumbs a.home:hover,.crumbs a.home:focus-visible{background:var(--gold)}
+  .crumbs .sep{color:var(--muted)}
+  .crumbs a.crumb{color:var(--ink); text-decoration:none; border-bottom:1px solid rgba(224,145,90,.5)}
+  .crumbs a.crumb:hover,.crumbs a.crumb:focus-visible{color:var(--accent)}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--serif); line-height:1.95; font-size:1.07rem;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 80% at 50% -8%, #1c1810 0%, var(--bg) 55%);
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:clamp(2rem,5vw,4rem) 1.4rem 5rem;}
+  .bar{display:flex; justify-content:flex-end; margin-bottom:2.4rem}
+  .bar a{font-size:.9rem; color:var(--muted); text-decoration:none; border-bottom:1px solid transparent}
+  .bar a:hover,.bar a:focus{color:var(--accent); border-bottom-color:var(--accent)}
+  header.hero{text-align:center; margin-bottom:1rem}
+  .kicker{color:var(--gold); letter-spacing:4px; font-size:.76rem; text-transform:uppercase}
+  h1{font-weight:700; font-size:clamp(2rem,6vw,3rem); letter-spacing:.5px; margin:.7rem 0 .35rem}
+  .dek{color:var(--gold); font-style:italic; font-size:1.05rem; margin:.2rem 0 .35rem}
+  .byline{color:var(--muted); font-size:.92rem; font-style:italic}
+  .flower{text-align:center; color:var(--accent); margin:2rem 0; font-size:1.1rem; opacity:.8}
+  /* The poem itself, featured */
+  .poem{
+    background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:10px; padding:1.8rem 1.9rem; margin:1.5rem 0 2.5rem;
+    font-size:1.2rem; line-height:2.05;
+  }
+  /* Essay */
+  h2.sec{font-weight:600; font-size:1.45rem; color:var(--accent);
+    margin:3rem 0 0; padding-top:1.8rem; border-top:1px solid var(--line); scroll-margin-top:1.5rem}
+  .essay-title{font-size:1.65rem; text-align:center; border-top:none; padding-top:0; margin-top:1rem}
+  p{margin:1.2rem 0}
+  p .lead-in{color:var(--gold); font-weight:600}
+  em, i{font-style:italic; color:#efe7d8}
+  sup.cite{font-size:.72em; line-height:0}
+  sup.cite a{color:var(--accent); text-decoration:none; padding:0 .1em}
+  sup.cite a:hover,sup.cite a:focus{text-decoration:underline}
+  .pull{border-left:3px solid var(--gold); margin:1.8rem 0; padding:.3rem 0 .3rem 1.2rem;
+    color:#efe7d8; font-size:1.15rem; font-style:italic}
+  /* References */
+  .refs{margin-top:1.4rem; font-size:.94rem; line-height:1.7; color:var(--muted)}
+  .refs ol{margin:0; padding-left:1.4rem}
+  .refs li{margin:.6rem 0}
+  .refs li::marker{color:var(--gold)}
+  .refs li:target{color:var(--ink); background:rgba(224,145,90,.08)}
+  nav.flow{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+    margin-top:3.5rem; padding-top:1.6rem; border-top:1px solid var(--line)}
+  nav.flow a{text-decoration:none; color:var(--accent); font-size:1rem; display:flex; flex-direction:column; max-width:48%}
+  nav.flow a.next{text-align:right; margin-left:auto}
+  nav.flow a .lbl{color:var(--muted); font-size:.78rem; letter-spacing:2px; text-transform:uppercase}
+  nav.flow a:hover .ttl,nav.flow a:focus .ttl{text-decoration:underline}
+  footer{text-align:center; color:var(--muted); font-size:.83rem; margin-top:2.5rem; line-height:1.8}
+  ::selection{background:rgba(224,145,90,.3)}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a class="home" href="../">&larr; Home</a>
+  <span class="sep">/</span>
+  <a class="crumb" href="index.html">Poems</a>
+</nav>
+<div class="wrap">
+  <div class="bar"><a href="index.html">ഉള്ളടക്കം ☰</a></div>
+
+  <header class="hero">
+    <div class="kicker">ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ</div>
+    <h1>നിശ്ശബ്ദത</h1>
+    <p class="dek">കവിതയും അതിന്റെ ഭ്രമാത്മകതയും</p>
+    <p class="byline">Written with Claude (Anthropic) · 2026 ജൂൺ 10</p>
+  </header>
+
+  <div class="poem">
+    ഒരാൾക്ക് എന്നിൽനിന്ന് ഒരൊറ്റ വാക്കു മതിയായിരുന്നു — അതു റെഡിയുമായിരുന്നു, നാവിൻതുമ്പത്ത്. എന്നിട്ടും കൊടുത്തില്ല; എന്തിനെന്ന് ഇന്നും അറിയില്ല — അഹങ്കാരമോ, പിശുക്കോ, വെറും അലസതയോ. ഇപ്പോൾ ആ വാക്ക് ആർക്കും വേണ്ടാതായി; വിലയാകട്ടെ കൂടിക്കൊണ്ടുമിരിക്കുന്നു. കൊടുക്കാത്തവൻ പലിശ അടയ്ക്കുന്ന ഒരേയൊരു വായ്പയാണു നിശ്ശബ്ദത.
+  </div>
+
+  <div class="flower">✦</div>
+
+  <h2 class="sec essay-title">കവിതയുടെ ഭ്രമാത്മക യുക്തി</h2>
+
+  <p>സാധാരണ വായ്പയുടെ വ്യാകരണം ലളിതമാണ്: കൊടുക്കുന്നവനു പലിശ കിട്ടും, വാങ്ങുന്നവൻ പലിശ അടയ്ക്കും. ഈ കവിത ആ വ്യാകരണത്തെ തലകീഴായി നിർത്തുന്നു. ഇവിടെ ഒന്നും കൈമാറ്റം ചെയ്യപ്പെട്ടിട്ടില്ല — വാക്കു കൊടുത്തിട്ടില്ല, ആരും വാങ്ങിയിട്ടില്ല. അപ്പോൾ വായ്പയേ ഇല്ലല്ലോ എന്നു ന്യായമായി ചോദിക്കാം. അവിടെയാണു കവിതയുടെ ആദ്യത്തെ ഭ്രമം: ഇടപാടു നടക്കാത്തതുകൊണ്ടാണ് ഇതു വായ്പയാകുന്നത്. കൊടുക്കാതെ പിടിച്ചുവച്ച വാക്ക് ഒരു കടമായി മാറുന്നു — കൊടുക്കാത്തവന്റെ പേരിൽ.</p>
+
+  <p><span class="lead-in">രണ്ടാമത്തെ ഭ്രമം:</span> പലിശ അടയ്ക്കുന്നത് ആരാണ്? കൊടുക്കാത്തവൻ. സാധാരണ കണക്കിൽ കൊടുക്കുന്നവനാണു ലാഭം; ഇവിടെ കൊടുക്കാത്തവനാണു നഷ്ടം — കുറ്റബോധത്തിന്റെ രൂപത്തിൽ, വർഷാവർഷം, കൂട്ടുപലിശയായി. വാക്കിന്റെ വില അന്നു നിസ്സാരമായിരുന്നു; കൊടുക്കാതിരുന്ന ഓരോ വർഷവും അതു കൂടിക്കൊണ്ടിരിക്കുന്നു. പണപ്പെരുപ്പം മൂല്യം കുറയ്ക്കും; കുറ്റബോധപ്പെരുപ്പം മൂല്യം കൂട്ടും.</p>
+
+  <p><span class="lead-in">മൂന്നാമത്തെ ഭ്രമമാണ് ഏറ്റവും ക്രൂരം:</span> ഈ പലിശ കിട്ടുന്നത് ആർക്കാണ്? ആർക്കുമില്ല. വാക്കു കിട്ടേണ്ടിയിരുന്ന ആൾക്ക് ഇങ്ങനെയൊരു ഇടപാടു നടന്നതേ അറിയില്ല; അയാളുടെ അക്കൗണ്ടിൽ ഒന്നും വരവുവയ്ക്കപ്പെടുന്നില്ല. അടവു മുഴുവൻ ചെല്ലുന്നതു ശൂന്യതയിലേക്കാണ്. വേണമെങ്കിൽ പിരിവുകാരി നിശ്ശബ്ദത തന്നെയാണെന്നു വായിക്കാം — അടവെല്ലാം അവളുടെ ഖജനാവിലേക്ക്; രസീതു തരില്ലെന്നു മാത്രം.</p>
+
+  <p>ഇവിടെനിന്നാണു കവിതയുടെ അന്തിമ യുക്തി തെളിയുന്നത്. സാധാരണ കടത്തിന്റെ ഭാഗ്യം ഒരു കടക്കാരൻ ഉണ്ടെന്നതാണ് — അയാൾക്കു വാങ്ങാം, ഇളവു ചെയ്യാം, ക്ഷമിക്കാം, അക്കൗണ്ട് അടയ്ക്കാം. <i>payee</i> ഇല്ലാത്ത <i>payment</i>-ന് ആ ഭാഗ്യമില്ല: അടവ് എത്ര നടത്തിയാലും അത് എവിടെയും വരവുവയ്ക്കപ്പെടുന്നില്ല; വരവില്ലാത്തതുകൊണ്ടു കടം ഒരിക്കലും തീരുന്നുമില്ല. കടം തീരാത്തതു തുക വലുതായതുകൊണ്ടല്ല — വാങ്ങാൻ ആളില്ലാത്തതുകൊണ്ടാണ്. അതാണു തീരാത്ത കണക്കുകളുടെയെല്ലാം ആധാരം.</p>
+
+  <h2 class="sec">പിരിവുകാരിയുടെ ലിംഗം: ഒരു കുറിപ്പ്</h2>
+
+  <p>നിശ്ശബ്ദതയെ “പിരിവുകാരി” എന്നു സ്ത്രീരൂപത്തിൽ അവതരിപ്പിച്ചതു യാദൃച്ഛികമല്ല; രസമെന്തെന്നാൽ, ആ ഒരേ തീരുമാനത്തിലേക്കു രണ്ടു വ്യത്യസ്ത വഴികളുണ്ട്.</p>
+
+  <p>ഒന്നു വ്യാകരണത്തിന്റേത്: “നിശ്ശബ്ദത” സംസ്കൃതത്തിലെ -താ (निःशब्दता) പ്രത്യയത്തിൽ തീരുന്ന അമൂർത്തനാമമാണ്; -താ രൂപങ്ങൾ സംസ്കൃതവ്യാകരണപ്രകാരം സ്ത്രീലിംഗമാണ്. മലയാള സാഹിത്യപാരമ്പര്യത്തിലും അമൂർത്തതകളെ സ്ത്രീരൂപത്തിൽ <i>personify</i> ചെയ്യുന്ന ശീലം പഴക്കമുള്ളതാണ്.</p>
+
+  <p>മറ്റേതു രാഷ്ട്രീയത്തിന്റേത്: നൂറ്റാണ്ടുകളായി ഭാഷയിലും സാഹിത്യത്തിലും തുടരുന്ന പുരുഷപക്ഷപാതത്തിനെതിരായ ബോധപൂർവമായ ഒരു തിരുത്തൽ — <i>default</i> പുരുഷനാകുന്നിടത്തു മനഃപൂർവം സ്ത്രീയെ പ്രതിഷ്ഠിക്കുക.</p>
+
+  <p>പക്ഷേ ഇവിടെ ഒരു സൂക്ഷ്മത ഒളിഞ്ഞിരിപ്പുണ്ട്. അമൂർത്തതകളെ സ്ത്രീരൂപത്തിലാക്കുന്ന പഴയ പാരമ്പര്യം പലപ്പോഴും ആ പക്ഷപാതത്തിന്റെ തന്നെ ഭാഗമായിരുന്നു: സ്ത്രീ എന്നാൽ <i>muse</i>, രാഷ്ട്രം, പ്രകൃതി, ജ്ഞാനദേവത — ആരാധിക്കപ്പെടുന്ന ആശയം; <i>agency</i> ഉള്ള കഥാപാത്രമല്ല. അതുകൊണ്ടു <i>feminine personification</i> എപ്പോഴും തിരുത്തലാകണമെന്നില്ല; ചിലപ്പോൾ പഴയ ശീലത്തിന്റെ ആവർത്തനവുമാകാം.</p>
+
+  <p>ഈ കവിതയിലെ പിരിവുകാരി ആ കെണിയിൽ വീഴുന്നില്ല എന്നതാണു ശ്രദ്ധിക്കേണ്ടത്. അവൾ <i>muse</i> അല്ല, ഇര അല്ല, കടം കിട്ടാനുള്ളവളുമല്ല — <i>ledger</i> കൈയിലുള്ളവളാണ്. അടവു വാങ്ങും, രസീതു തരില്ല, ഇളവില്ല; അധികാരം മുഴുവൻ അവളുടെ പക്കൽ. സ്ത്രീരൂപങ്ങൾക്കു <i>decorative</i> റോളല്ല <i>structural power</i> കൊടുക്കുക എന്നതാണു പക്ഷപാതത്തിരുത്തലിന്റെ ഫലപ്രദമായ വഴി — ഈ കവിതയിലെ ലിംഗതീരുമാനം നിൽക്കുന്നത് ആ അടിത്തറയിലാണ്.</p>
+
+  <p>ഈ സൂക്ഷ്മതയ്ക്കു താത്ത്വികമായ ഒരു അടിത്തറയുണ്ട് — Genevieve Lloyd-ന്റെ <i>The Man of Reason</i><sup class="cite"><a href="#ref1">1</a></sup>. Lloyd-ന്റെ വാദം ഇതാണ്: പാശ്ചാത്യ തത്ത്വചിന്തയിൽ <i>reason</i> എന്ന ആശയം തന്നെ <i>male</i> ആയി നിർമിക്കപ്പെട്ടതാണ്; <i>feminine</i> എന്നതു <i>reason</i> മറികടക്കേണ്ട മണ്ഡലമായി — പ്രകൃതി, ശരീരം, വികാരം — നിർവചിക്കപ്പെട്ടു. അവരുടെ ഏറ്റവും മൂർച്ചയുള്ള നിരീക്ഷണം: Sophia, Sapientia, Justitia, Muse-കൾ തുടങ്ങിയ <i>feminine personifications</i> ഈ ഘടനയ്ക്ക് അപവാദമല്ല, അതിന്റെ ഭാഗമാണ്.</p>
+
+  <blockquote class="pull">സ്ത്രീക്കു പ്രതിമ കിട്ടി; പുരുഷനു philosopher-ന്റെ കസേരയും. Wisdom സ്ത്രീയാണ് — wise man പുരുഷനും.</blockquote>
+
+  <p>വ്യാകരണലിംഗം (sophia, sapientia, प्रज्ञा, विद्या — എല്ലാം സ്ത്രീലിംഗം; -താ പ്രത്യയം ഉൾപ്പെടെ) ഈ പ്രതീകവൽക്കരണത്തിന് അസംസ്കൃതവസ്തു നൽകി; പ്രതീകം പിന്നെ <i>ideological</i> ജോലി ചെയ്തു.</p>
+
+  <p>Lloyd-ന്റെ ഈ ചട്ടക്കൂടിൽ വായിക്കുമ്പോൾ പിരിവുകാരിയുടെ <i>subversion</i> ഇരട്ടയാണെന്നു തെളിയും.</p>
+
+  <p><span class="lead-in">ഒന്ന്:</span> അവൾ ഇരിക്കുന്നത് Lloyd ചൂണ്ടിക്കാട്ടുന്ന <i>male-coded</i> മണ്ഡലത്തിലാണ് — കണക്ക്, <i>ledger</i>, പലിശ, <i>calculation</i>; വികാരത്തിന്റെയല്ല, ശുദ്ധ <i>reason</i>-ന്റെ കസേരയിൽ.</p>
+
+  <p><span class="lead-in">രണ്ട്:</span> അവൾക്കു <i>stereotypical feminine</i> മൃദുത്വവും അനുവദിച്ചിട്ടില്ല — രസീതില്ല, ഇളവില്ല, കരുണയില്ല. Muse-ന്റെ <i>pedestal</i>-ഉം മാതാവിന്റെ വാത്സല്യവും ഒരുപോലെ നിരസിക്കപ്പെടുന്നു; ബാക്കിയാകുന്നതു ശുദ്ധ <i>structural power</i>. <i>The Man of Reason</i> ഉന്നയിച്ച പ്രശ്നത്തിന് ഒരു കാവ്യപരമായ മറുപടി എന്നു വേണമെങ്കിൽ ഇതിനെ വിളിക്കാം.</p>
+
+  <h2 class="sec">പ്രാച്യമായ മറുപുറം: പ്രകൃതി, ശക്തി, ദേവി</h2>
+
+  <p>Lloyd-ന്റെ രോഗനിർണയം പാശ്ചാത്യ തത്ത്വചിന്തയെക്കുറിച്ചാണ്; ഭാരതീയ പാരമ്പര്യം ആശയതലത്തിൽ ഘടനാപരമായി വ്യത്യസ്തമായ ഒരു ചിത്രമാണു വയ്ക്കുന്നത്.</p>
+
+  <p>സാംഖ്യം (सांख्य) ഏതാണ്ടു സമ്പൂർണമായ ഒരു വിപരീതമാണ്: പ്രകൃതി (प्रकृति) — സ്ത്രീലിംഗം — ആണ് ഏക കർത്താവ്; ത്രിഗുണങ്ങളുടെ ചലനവും സൃഷ്ടിയും പരിണാമവും മുഴുവൻ അവളുടേത്.</p>
+
+  <p>പുരുഷൻ (पुरुष) ആകട്ടെ അകർത്താവ് — ശുദ്ധ സാക്ഷി, നിഷ്ക്രിയ ദ്രഷ്ടാവ്. പാശ്ചാത്യം <i>activity</i>-യും <i>reason</i>-ഉം പുരുഷനു കൊടുത്തിടത്ത്, സാംഖ്യം സകല കർതൃത്വവും സ്ത്രീതത്ത്വത്തിനും ശുദ്ധ നിഷ്ക്രിയത്വം പുരുഷതത്ത്വത്തിനും കൊടുക്കുന്നു.</p>
+
+  <p>ശാക്തപാരമ്പര്യം ഇതിലും മുന്നോട്ടു പോകുന്നു: ശക്തി (शक्ति) ഒരു ഗുണമല്ല, <i>power as such</i> ആണ്. സൗന്ദര്യലഹരിയുടെ പ്രസിദ്ധമായ ആദ്യശ്ലോകം — ശിവനു പ്രവർത്തിക്കാനാകുന്നതു ശക്തിയോടു ചേരുമ്പോൾ മാത്രം; അല്ലെങ്കിൽ അനങ്ങാൻ പോലുമാകില്ല<sup class="cite"><a href="#ref2">2</a></sup>. ശിവ–ശവ ശ്ലേഷം ഈ വാദത്തിന്റെ ജനപ്രിയരൂപമാണ്: ശക്തിയില്ലാത്ത ശിവൻ ശവം. ദേവീമാഹാത്മ്യത്തിലാകട്ടെ, പുരുഷദേവന്മാർ പരാജയപ്പെട്ടിടത്തു ജയിക്കാനാണു ദേവി ഉണ്ടാകുന്നതുതന്നെ<sup class="cite"><a href="#ref3">3</a></sup>.</p>
+
+  <p>ഈ കവിതയിലെ പിരിവുകാരിയുടെ ഏറ്റവും അടുത്ത ബന്ധുക്കൾ ഇരിക്കുന്നതും ഇവിടെയാണ് — കാളിയുടെയും മഹാവിദ്യകളുടെയും രജിസ്റ്ററിൽ. നിർബന്ധിത മൃദുത്വം ഉരിഞ്ഞുകളഞ്ഞ സ്ത്രീശക്തി: ഭയങ്കരി, പരമാധികാരി, ആരുടെയും അനുമതി വേണ്ടാത്തവൾ. രസീതു തരാത്ത പിരിവുകാരിക്കു Muse-ന്റെ സ്വരമല്ല, കാളിയുടെ സ്വരമാണ്.</p>
+
+  <p>പ്രതീകങ്ങൾക്കപ്പുറം ഈ പാരമ്പര്യത്തിൽ ഒരു യഥാർഥ സ്ത്രീയുമുണ്ട് — ഗാർഗി വാചക്നവി.</p>
+
+  <p>ബൃഹദാരണ്യകോപനിഷത്തിൽ (3.6, 3.8) ജനകന്റെ സദസ്സിലെ <i>brahmodya</i>-യിൽ യാജ്ഞവൽക്യനെ ചോദ്യം ചെയ്യുന്നവരിൽ ഏക സ്ത്രീ<sup class="cite"><a href="#ref4">4</a></sup>. ആദ്യ റൗണ്ടിൽ <i>regress</i> ചോദ്യങ്ങൾ പിന്തുടർന്ന അവളോടു യാജ്ഞവൽക്യന്റെ താക്കീത്: “ഗാർഗി, അതിപ്രശ്നം ചോദിക്കരുത്, തല തെറിച്ചുപോകും” (मा अतिप्राक्षीः, मूर्धा ते विपतत्). അവൾ നിർത്തുന്നു — പക്ഷേ തിരിച്ചുവരുന്നു: രണ്ട് അമ്പുകൾ തൊടുത്ത വില്ലാളിയെപ്പോലെ രണ്ടു ചോദ്യങ്ങളുമായി. ആ ചോദ്യങ്ങളാണു യാജ്ഞവൽക്യന്റെ ഏറ്റവും ആഴമുള്ള ഉപദേശമായ അക്ഷരബ്രഹ്മവാദം പുറത്തുകൊണ്ടുവരുന്നത്; ഒടുവിൽ സദസ്സിനോടു വിധി പ്രസ്താവിക്കുന്നതും അവൾതന്നെ. (തലതെറിക്കൽ ഭീഷണി <i>gendered silencing</i> ആയിരുന്നില്ല എന്നതും ശ്രദ്ധേയം: അതിപ്രശ്നത്തിനെതിരായ <i>brahmodya</i> നിയമമാണത് — പുരുഷനായ ശാകല്യനു ഇതേ താക്കീതു കിട്ടുകയും അയാളുടെ തല യഥാർഥത്തിൽ തെറിക്കുകയും ചെയ്യുന്നു. ഗാർഗി രക്ഷപ്പെട്ടത് എപ്പോൾ നിർത്തണമെന്നും എങ്ങനെ തിരിച്ചുവരണമെന്നും അറിയാമായിരുന്നതുകൊണ്ട് — <i>strategy</i> ഉള്ള <i>rebellion</i>.)</p>
+
+  <p>ഇവിടെ ഒരു നിർണായക വ്യത്യാസം തെളിയുന്നു: പ്രകൃതിയും ദേവിയും പ്രതീകാത്മക സ്ത്രീത്വങ്ങളാണ്; ഗാർഗി <i>male-coded</i> മണ്ഡലത്തിൽ — സദസ്സിൽ, വാദത്തിൽ, <i>reason</i>-ന്റെ കളിയിൽ — നേരിട്ടു കളിക്കുന്ന യഥാർഥ സ്ത്രീ. Lloyd-നുള്ള ഏറ്റവും ശക്തമായ ഭാരതീയ മറുപടി ദേവിയല്ല, ഗാർഗിയാണ് എന്നു വാദിക്കാം. മൈത്രേയിയും (അമൃതത്വം തരാത്തതുകൊണ്ട് എനിക്കെന്തിനു സ്വത്ത് എന്നു ചോദിച്ചവൾ<sup class="cite"><a href="#ref5">5</a></sup>) സുലഭയും (മഹാഭാരതത്തിലെ സുലഭാ-ജനക സംവാദത്തിൽ ജനകനെ വാദത്തിൽ തോൽപ്പിച്ച്, ആത്മാവിനു ലിംഗമില്ലെന്നു സ്ഥാപിച്ചവൾ<sup class="cite"><a href="#ref6">6</a></sup>) അവൾക്കു കൂട്ടുണ്ട്.</p>
+
+  <p><span class="lead-in">Honest ആയ ഒരു അടിക്കുറിപ്പും വേണം:</span> ഇവർ <i>exceptions</i> ആയിരുന്നു — ഈ വാതിൽ പിന്നീടു ധർമശാസ്ത്രം അടച്ചുപൂട്ടി, സ്ത്രീകളെ വേദപഠനത്തിൽനിന്നുതന്നെ പുറത്താക്കി.</p>
+
+  <p>പക്ഷേ ഇവിടെയും Lloyd-ന്റെ ജാഗ്രതയ്ക്ക് ഒരു ഭാരതീയ പ്രതിധ്വനിയുണ്ട് — രണ്ടു വഴിക്ക്.</p>
+
+  <p><span class="lead-in">ഒന്ന്:</span> സാംഖ്യത്തിന്റെ ലക്ഷ്യമായ കൈവല്യം ഒടുവിൽ പുരുഷൻ പ്രകൃതിയിൽനിന്നു വിടുതൽ നേടലാണ്; സകല കർതൃത്വവും കൊടുത്തിട്ടും, അവസാന കണക്കിൽ പ്രകൃതി “കണ്ടു മറികടക്കേണ്ടത്” ആയിത്തന്നെ നിൽക്കുന്നു — Lloyd-ന്റെ ഘടനയുടെ ഒരു നിഴൽ.</p>
+
+  <p><span class="lead-in">രണ്ട്:</span> പ്രതീകതലത്തിലെ ദേവീപ്രാമുഖ്യം സാമൂഹികതലത്തിലെ പുരുഷാധിപത്യവുമായി നൂറ്റാണ്ടുകളോളം സുഖമായി സഹവസിച്ചു — “Is the Goddess a Feminist?” എന്ന ചോദ്യം പണ്ഡിതലോകത്തു ഗൗരവമായി ഉന്നയിക്കപ്പെട്ടിട്ടുള്ളതാണ്<sup class="cite"><a href="#ref7">7</a></sup>. ക്ഷേത്രത്തിൽ ദേവി, അടുക്കളയിൽ അടിമ — പ്രതിമ കിട്ടലും അധികാരം കിട്ടലും രണ്ടാണ് എന്ന പാഠം കിഴക്കും ബാധകം.</p>
+
+  <p>അതുകൊണ്ടു ഭാരതീയ വസ്തുതകൾ Lloyd-നെ സങ്കീർണമാക്കുന്നു; പൂർണമായി റദ്ദാക്കുന്നില്ല.</p>
+
+  <blockquote class="pull">പിരിവുകാരി നിൽക്കുന്നത് ഈ രണ്ടു പാരമ്പര്യങ്ങളുടെയും ഇടയിലുള്ള ഒരു രസകരമായ ബിന്ദുവിലാണ്: വ്യാകരണംകൊണ്ടു സംസ്കൃതത്തിന്റെ -താ സ്ത്രീലിംഗം, കർതൃത്വംകൊണ്ടു ശക്തിയുടെ വംശം, പക്ഷേ ആരാധനയുടെ പീഠം വേണ്ടെന്നുവച്ചവൾ — പൂജയല്ല, പിരിവാണ് അവളുടെ ഇടപാട്.</blockquote>
+
+  <h2 class="sec">References</h2>
+  <div class="refs">
+    <ol>
+      <li id="ref1">Genevieve Lloyd, <i>The Man of Reason: ‘Male’ and ‘Female’ in Western Philosophy</i> (London: Methuen, 1984).</li>
+      <li id="ref2"><i>Saundaryalaharī</i> (सौन्दर्यलहरी), attributed to Śaṅkara, verse 1: “śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavitum…”</li>
+      <li id="ref3"><i>Devī Māhātmya</i> (देवीमाहात्म्य), Mārkaṇḍeya Purāṇa, chapters 81–93.</li>
+      <li id="ref4"><i>Bṛhadāraṇyaka Upaniṣad</i> (बृहदारण्यकोपनिषद्) 3.6, 3.8 (Gārgī–Yājñavalkya dialogues); Patrick Olivelle, trans., <i>The Early Upaniṣads: Annotated Text and Translation</i> (New York: Oxford University Press, 1998).</li>
+      <li id="ref5"><i>Bṛhadāraṇyaka Upaniṣad</i> 2.4, 4.5 (Maitreyī dialogues); Olivelle, <i>The Early Upaniṣads</i>.</li>
+      <li id="ref6"><i>Mahābhārata</i>, Śānti Parvan, Sulabhā–Janaka-saṃvāda; Ruth Vanita, “The Self Is Not Gendered: Sulabha’s Debate with King Janaka,” <i>NWSA Journal</i> 15, no. 2 (2003).</li>
+      <li id="ref7">Alf Hiltebeitel and Kathleen M. Erndl, eds., <i>Is the Goddess a Feminist? The Politics of South Asian Goddesses</i> (New York: New York University Press, 2000).</li>
+    </ol>
+  </div>
+
+  <nav class="flow">
+    <a href="index.html">
+      <span class="lbl">← ഉള്ളടക്കം</span>
+      <span class="ttl">എല്ലാ കവിതകളും</span>
+    </a>
+    <a class="next" href="poems-2026-06-20.html">
+      <span class="lbl">പുതിയത് →</span>
+      <span class="ttl">ഒൻപതു കവിതകൾ · 2026 ജൂൺ 20</span>
+    </a>
+  </nav>
+
+  <footer>
+    ക്‌ളോഡുമൊത്തെഴുതിയവ<br>
+    2026 ജൂൺ 10
+  </footer>
+</div>
+<script data-goatcounter="https://surendran2024.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

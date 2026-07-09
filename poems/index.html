@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ — Poems with Claude (Anthropic)</title>
+<meta name="description" content="ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ — തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം. Poems with Claude (Anthropic), in Malayalam.">
+<meta property="og:type" content="book">
+<meta property="og:title" content="ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ — Poems with Claude (Anthropic)">
+<meta property="og:description" content="തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം — a collection of Malayalam poems.">
+<meta property="og:url" content="https://surendran2024.github.io/poems/">
+<meta property="og:locale" content="ml_IN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600;700&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12100d; --ink:#e9e3d6; --muted:#a39a8a; --line:#2b2620;
+    --accent:#e0915a; --gold:#cda45f; --card:#191510; --card2:#1d1812;
+    --serif:"Noto Serif Malayalam","Noto Serif",Georgia,serif;
+    --maxw:720px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--serif); line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(130% 80% at 50% -5%, #221c12 0%, var(--bg) 55%);
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:clamp(2.5rem,7vw,6rem) 1.4rem 5rem;}
+  .home-link{
+    font-family:"Noto Serif",Georgia,serif; font-size:.92rem; font-weight:700; color:#1a1208; text-decoration:none;
+    letter-spacing:.02em; display:inline-flex; align-items:center; gap:.5rem;
+    background:var(--accent); border:1px solid var(--accent); border-radius:999px;
+    padding:.5rem 1.15rem; transition:background .2s ease, transform .2s ease;
+  }
+  .home-link:hover,.home-link:focus-visible{background:var(--gold); border-color:var(--gold); transform:translateY(-1px)}
+  header.hero{text-align:center; margin-bottom:1rem}
+  .kicker{color:var(--gold); letter-spacing:4px; font-size:.78rem; text-transform:uppercase}
+  h1{font-weight:700; font-size:clamp(2.1rem,7vw,3.3rem); margin:.7rem 0 .4rem; letter-spacing:.5px}
+  .dek{color:var(--muted); font-style:italic; font-size:1.05rem}
+  .coauth{color:var(--muted); font-size:.83rem; margin:.7rem auto 0; max-width:34rem; line-height:1.6}
+  .rule{display:flex; align-items:center; gap:1rem; color:var(--accent); margin:2.4rem 0 1.4rem; opacity:.75}
+  .rule::before,.rule::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  .controls{display:flex; justify-content:flex-end; margin:0 0 1.4rem}
+  #sortToggle{
+    font-family:var(--serif); font-size:.9rem; color:var(--ink); cursor:pointer;
+    background:var(--card2); border:1px solid var(--line); border-radius:999px;
+    padding:.45rem 1rem; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  #sortToggle:hover,#sortToggle:focus-visible{border-color:var(--accent); color:var(--accent)}
+  #sortToggle .ico{color:var(--gold); font-size:1.05em}
+  #sortToggle .lbl-pre{color:var(--muted); font-size:.82em}
+
+  .toc{display:flex; flex-direction:column; gap:1.2rem}
+  .entry{
+    display:block; text-decoration:none; color:inherit;
+    background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--line); border-radius:14px; padding:1.4rem 1.6rem;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .entry:hover,.entry:focus-within{border-color:var(--accent)}
+  .entry .edate{color:var(--gold); letter-spacing:2px; font-size:.74rem; text-transform:uppercase}
+  .entry h2{margin:.35rem 0 .15rem; font-size:1.4rem; font-weight:600; color:var(--accent)}
+  .entry h2 a{color:inherit; text-decoration:none}
+  .entry h2 a:hover,.entry h2 a:focus{text-decoration:underline}
+  .entry .scope{color:var(--muted); font-size:.92rem; margin-bottom:.8rem}
+  .titles{display:flex; flex-wrap:wrap; gap:.3rem .9rem}
+  .titles a{color:var(--ink); text-decoration:none; font-size:1rem; border-bottom:1px solid transparent}
+  .titles a:hover,.titles a:focus{color:var(--accent); border-bottom-color:var(--accent)}
+  .badge{display:inline-block; font-size:.68rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--gold); border:1px solid var(--line); border-radius:999px; padding:.1rem .55rem; margin-left:.5rem; vertical-align:middle}
+
+  footer{text-align:center; color:var(--muted); font-size:.85rem; margin-top:3rem;
+    border-top:1px solid var(--line); padding-top:1.6rem; line-height:1.8}
+  ::selection{background:rgba(224,145,90,.3)}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home-link" href="../">&larr; Home</a>
+  <header class="hero">
+    <div class="kicker">Poems with Claude (Anthropic)</div>
+    <h1>ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ</h1>
+    <p class="dek">തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം</p>
+    <p class="coauth">ക്‌ളോഡുമൊത്ത് (Anthropic) എഴുതിയവ.</p>
+  </header>
+
+  <div class="rule">✿</div>
+
+  <div class="controls">
+    <button id="sortToggle" type="button" aria-pressed="true"
+            aria-label="ക്രമം മാറ്റുക — പുതിയത് / പഴയത് മുമ്പേ">
+      <span class="ico">⇅</span><span class="lbl-pre">ക്രമം:</span><span class="state">പുതിയത് മുമ്പേ</span>
+    </button>
+  </div>
+
+  <div class="toc" data-groups>
+
+    <div class="entry" data-date="2026-07-01">
+      <div class="edate">2026 ജൂലൈ 1</div>
+      <h2><a href="the-name.html">പേര് <span class="badge">ഒറ്റക്കവിത</span></a></h2>
+      <div class="scope">ഒരാളെ ഉപേക്ഷിച്ചുപോയ ഒരു പേരിന്റെ കഥ</div>
+    </div>
+
+    <div class="entry" data-date="2026-06-29">
+      <div class="edate">2026 ജൂൺ 29</div>
+      <h2><a href="poems-2026-06-29.html">ആറു കവിതകൾ <span class="badge">അഞ്ചാം പുസ്തകം</span></a></h2>
+      <div class="scope">ചൂലിന്റെ കർതൃത്വം · കത്രിക · മൗനം · ബുദ്ധിജീവി · വാതിൽ · ഓർമ</div>
+      <div class="titles">
+        <a href="poems-2026-06-29.html#chool">ചൂലിന്റെ കർതൃത്വം</a>
+        <a href="poems-2026-06-29.html#kathrika">കത്രിക</a>
+        <a href="poems-2026-06-29.html#maunam">മൗനം</a>
+        <a href="poems-2026-06-29.html#buddhijeevi">ബുദ്ധിജീവി</a>
+        <a href="poems-2026-06-29.html#vaathil">വാതിൽ</a>
+        <a href="poems-2026-06-29.html#orma">ഓർമ</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-26">
+      <div class="edate">2026 ജൂൺ 26</div>
+      <h2><a href="poems-2026-06-26.html">ഏഴു കവിതകൾ <span class="badge">നാലാം പുസ്തകം</span></a></h2>
+      <div class="scope">പാലം · കടം വീട്ടൽ · ഉപ്പ് · വിത്ത് · തിരി · കിണർ · വഴി</div>
+      <div class="titles">
+        <a href="poems-2026-06-26.html#palam">പാലം</a>
+        <a href="poems-2026-06-26.html#kadam-veettal">കടം വീട്ടൽ</a>
+        <a href="poems-2026-06-26.html#uppu">ഉപ്പ്</a>
+        <a href="poems-2026-06-26.html#vitthu">വിത്ത്</a>
+        <a href="poems-2026-06-26.html#thiri">തിരി</a>
+        <a href="poems-2026-06-26.html#kinar">കിണർ</a>
+        <a href="poems-2026-06-26.html#vazhi">വഴി</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-23.1">
+      <div class="edate">2026 ജൂൺ 23</div>
+      <h2><a href="poems-2026-06-23-1.html">ആറു കവിതകൾ</a></h2>
+      <div class="scope">ഒപ്പ് · കള്ളനാണയം · കാലടികൾ · അളവുകോൽ · പ്രതിമ · പൂട്ട്</div>
+      <div class="titles">
+        <a href="poems-2026-06-23-1.html#oppu">ഒപ്പ്</a>
+        <a href="poems-2026-06-23-1.html#kallanaanayam">കള്ളനാണയം</a>
+        <a href="poems-2026-06-23-1.html#kaaladikal">കാലടികൾ</a>
+        <a href="poems-2026-06-23-1.html#alavukol">അളവുകോൽ</a>
+        <a href="poems-2026-06-23-1.html#prathima">പ്രതിമ</a>
+        <a href="poems-2026-06-23-1.html#poott">പൂട്ട്</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-23">
+      <div class="edate">2026 ജൂൺ 23</div>
+      <h2><a href="poems-2026-06-23.html">അഞ്ചു കവിതകൾ</a></h2>
+      <div class="scope">ഘടികാരം · കണ്ണാടി · താക്കോൽ · ഉമ്മറപ്പടി · പേര്</div>
+      <div class="titles">
+        <a href="poems-2026-06-23.html#ghatikaram">ഘടികാരം</a>
+        <a href="poems-2026-06-23.html#kannadi">കണ്ണാടി</a>
+        <a href="poems-2026-06-23.html#thakkol">താക്കോൽ</a>
+        <a href="poems-2026-06-23.html#ummarappadi">ഉമ്മറപ്പടി</a>
+        <a href="poems-2026-06-23.html#peru">പേര്</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-20">
+      <div class="edate">2026 ജൂൺ 20</div>
+      <h2><a href="poems-2026-06-20.html">ഒൻപതു കവിതകൾ</a></h2>
+      <div class="scope">തിരിച്ചറിയാത്ത മുഖം · ക്ഷമാപണം · കടം · … · നീക്കിയിരിപ്പ്</div>
+      <div class="titles">
+        <a href="poems-2026-06-20.html#mukham">തിരിച്ചറിയാത്ത മുഖം</a>
+        <a href="poems-2026-06-20.html#kshamapanam">ക്ഷമാപണം</a>
+        <a href="poems-2026-06-20.html#kadam">കടം</a>
+        <a href="poems-2026-06-20.html#munkoor">മുൻ‌കൂർ മാപ്പ്</a>
+        <a href="poems-2026-06-20.html#pusthakam">തിരിച്ചുകൊടുക്കാത്ത പുസ്തകം</a>
+        <a href="poems-2026-06-20.html#baakki">ബാക്കി</a>
+        <a href="poems-2026-06-20.html#avasana">അവസാന വാക്ക്</a>
+        <a href="poems-2026-06-20.html#sakshi">സാക്ഷി</a>
+        <a href="poems-2026-06-20.html#neekkiyirippu">നീക്കിയിരിപ്പ്</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-10">
+      <div class="edate">2026 ജൂൺ 10</div>
+      <h2><a href="silence-and-analysis.html">നിശ്ശബ്ദത <span class="badge">+ വ്യാഖ്യാനം</span></a></h2>
+      <div class="scope">കവിതയും അതിന്റെ ഭ്രമാത്മകതയും</div>
+    </div>
+
+  </div>
+
+  <footer>
+    ✦<br>
+    ക്‌ളോഡുമൊത്തെഴുതിയവ
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var KEY='poemsSortOrder';
+    var btn=document.getElementById('sortToggle');
+    function apply(order){
+      document.querySelectorAll('[data-groups]').forEach(function(box){
+        var items=Array.prototype.slice.call(box.querySelectorAll(':scope > [data-date]'));
+        items.sort(function(a,b){
+          var c=a.getAttribute('data-date').localeCompare(b.getAttribute('data-date'));
+          return order==='new' ? -c : c;
+        });
+        items.forEach(function(g){ box.appendChild(g); });
+      });
+      btn.setAttribute('aria-pressed', order==='new');
+      btn.querySelector('.state').textContent = (order==='new') ? 'പുതിയത് മുമ്പേ' : 'പഴയത് മുമ്പേ';
+    }
+    var cur;
+    try{ cur=localStorage.getItem(KEY); }catch(e){}
+    if(cur!=='old' && cur!=='new') cur='new';
+    apply(cur);
+    btn.addEventListener('click',function(){
+      cur = (cur==='new') ? 'old' : 'new';
+      try{ localStorage.setItem(KEY,cur); }catch(e){}
+      apply(cur);
+    });
+  })();
+</script>
+<script data-goatcounter="https://surendran2024.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

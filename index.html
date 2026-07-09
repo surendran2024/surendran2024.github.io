@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surendran — Articles, Poems &amp; Notes</title>
+<meta name="description" content="Personal site of Surendran — long-form essays on philosophy of mind, artificial intelligence, linguistics and biology, plus a Malayalam poetry collection, some written with Claude (Anthropic).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Surendran — Articles, Poems &amp; Notes">
+<meta property="og:description" content="Long-form, sourced essays on mind, AI, language and biology — plus a Malayalam poetry collection.">
+<meta property="og:url" content="https://surendran2024.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1216; --ink:#e9e3d6; --muted:#a39a8a; --line:#2b3038;
+    --accent:#e0915a; --accent2:#6cb6d6; --gold:#cda45f;
+    --card:#171b21; --card2:#1c2128;
+    --shadow:0 1px 3px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.40);
+    --maxw:760px;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 80% at 50% -8%, #221a12 0%, var(--bg) 52%);
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:clamp(2.6rem,7vw,5.5rem) 1.4rem 4.5rem}
+  .ml{font-family:"Noto Serif Malayalam",var(--serif)}
+
+  header.hero{text-align:center; margin-bottom:.6rem}
+  .kicker{font-family:var(--sans); color:var(--gold); letter-spacing:.22em;
+    font-size:.74rem; text-transform:uppercase; font-weight:700}
+  h1{font-weight:700; font-size:clamp(2.1rem,6vw,3.1rem); margin:.7rem 0 .5rem;
+    letter-spacing:-.015em; color:#fbf5e9}
+  .dek{color:var(--muted); font-style:italic; font-size:1.06rem; max-width:34rem; margin:0 auto}
+
+  .rule{display:flex; align-items:center; gap:1rem; color:var(--accent); margin:2.2rem 0 1.3rem; opacity:.7}
+  .rule::before,.rule::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  .sections{display:flex; flex-direction:column; gap:1.15rem}
+  .section{
+    display:block; text-decoration:none; color:inherit;
+    background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--line); border-radius:14px; padding:1.5rem 1.7rem;
+    box-shadow:var(--shadow);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .section:hover,.section:focus-within{border-color:var(--accent); transform:translateY(-1px)}
+  .disc{font-family:var(--sans); color:var(--gold); letter-spacing:.14em; font-size:.72rem; text-transform:uppercase}
+  .section h2{margin:.35rem 0 .4rem; font-size:1.5rem; font-weight:700; line-height:1.25; letter-spacing:-.01em; color:var(--accent)}
+  .section .blurb{color:#c9c1b1; font-size:1rem; line-height:1.6; margin:0}
+
+  footer{text-align:center; color:var(--muted); font-family:var(--sans); font-size:.82rem; margin-top:3rem;
+    border-top:1px solid var(--line); padding-top:1.6rem; line-height:1.8}
+  footer a{color:var(--accent2); text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  ::selection{background:rgba(224,145,90,.3)}
+  a:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .section{transition:none}
+    .section:hover,.section:focus-within{transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Surendran &middot; surendran2024.github.io</div>
+    <h1>Articles, Poems &amp; Notes</h1>
+    <p class="dek">Long-form essays and a growing Malayalam poetry collection &mdash; written to be read by anyone, sourced for those who want to dig deeper. Some written solo, some with Claude.</p>
+  </header>
+
+  <div class="rule">&#10086;</div>
+
+  <div class="sections">
+    <a class="section" href="articles/">
+      <div class="disc">Essays</div>
+      <h2>Articles</h2>
+      <p class="blurb">Long-form, sourced essays on philosophy of mind, artificial intelligence, linguistics and biology.</p>
+    </a>
+
+    <a class="section" href="poems/">
+      <div class="disc">Poetry &middot; Malayalam</div>
+      <h2><span class="ml">ക്‌ളോഡുമൊത്തെഴുതിയ കവിതകൾ</span> &mdash; Poems with Claude</h2>
+      <p class="blurb">A growing collection of Malayalam poems, co-authored with Claude &mdash; <span class="ml">തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം</span>.</p>
+    </a>
+  </div>
+
+  <footer>
+    &#10022;<br>
+    Written by Surendran, several pieces in collaboration with Claude (Anthropic).<br>
+    Built as self-contained pages on <a href="https://github.com/surendran2024/surendran2024.github.io">GitHub Pages</a>.
+  </footer>
+</div>
+
+<script data-goatcounter="https://surendran2024.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Other and Its Discontents — a note on othering</title>
+<meta name="description" content="A note on the philosophy of the Other and 'othering' — Hegel, Husserl, solipsism, Sartre, Camus, Levinas, de Beauvoir, Said and Spivak — behind one Malayalam satirical couplet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&family=Space+Grotesk:wght@400;500;600&family=Noto+Serif+Malayalam:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Dark "candlelit manuscript" — parchment inverted to ink-on-stone-at-night.
+       Parchment is now the text; oxblood & indigo lightened to pass AA on the dark ground. */
+    --stone:      #1A1611;   /* warm near-black ground (not pure black) */
+    --stone-deep: #221D17;   /* panel / threshold ground */
+    --ink:        #E7E2D6;   /* body text — the old parchment, now the ink */
+    --ink-soft:   #B3AC9C;   /* secondary text */
+    --oxblood:    #D2685C;   /* rubrication accent — lightened madder */
+    --oxblood-dk: #E07A6E;   /* links / .term — lighter still, reads on dark */
+    --indigo:     #8C99BD;   /* the "Other" / threshold tone, lifted for dark */
+    --rule:       #3A352D;   /* hairlines */
+    --maxw:       40rem;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  .crumbs{max-width:var(--maxw); margin:0 auto; padding:1.4rem 1.4rem 0;
+    font-family:"Space Grotesk",Arial,system-ui,sans-serif; font-size:.85rem;
+    display:flex; align-items:center; gap:.6rem; flex-wrap:wrap}
+  .crumbs a.home{background:var(--oxblood); color:var(--stone); font-weight:700; text-decoration:none;
+    padding:.42rem 1rem; border-radius:999px; letter-spacing:.02em; transition:background .2s ease}
+  .crumbs a.home:hover,.crumbs a.home:focus-visible{background:var(--oxblood-dk)}
+  .crumbs .sep{color:var(--ink-soft)}
+  .crumbs a.crumb{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--oxblood)}
+  .crumbs a.crumb:hover,.crumbs a.crumb:focus-visible{color:var(--oxblood-dk)}
+  body{
+    margin:0;
+    background:var(--stone);
+    color:var(--ink);
+    font-family:"Spectral",Georgia,"Times New Roman",serif;
+    font-size:1.075rem;
+    line-height:1.72;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+  }
+  .ml{font-family:"Noto Serif Malayalam","Spectral",serif;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.4rem;}
+
+  /* ---- rubric label utility ---- */
+  .eyebrow{
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--oxblood);font-weight:500;
+  }
+
+  /* ---- hero ---- */
+  header.masthead{padding:4.5rem 0 1.2rem;}
+  header.masthead .eyebrow{margin-bottom:1.4rem;display:block;}
+  h1.title{
+    font-family:"Fraunces",Georgia,serif;
+    font-optical-sizing:auto;
+    font-weight:500;
+    font-size:clamp(2.2rem,6vw,3.4rem);
+    line-height:1.06;
+    letter-spacing:-.012em;
+    margin:0 0 .5rem;
+  }
+  h1.title em{font-style:italic;color:var(--oxblood);font-weight:500;}
+  .subtitle{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+    font-size:clamp(1.05rem,2.6vw,1.3rem);
+    color:var(--ink-soft);margin:.2rem 0 0;line-height:1.4;
+  }
+
+  /* ---- signature: the couplet as a facing ---- */
+  .couplet{
+    margin:3rem 0 3.4rem;
+    background:var(--stone-deep);
+    border-top:2px solid var(--oxblood);
+    border-bottom:1px solid var(--rule);
+    padding:2.2rem 1.7rem 2rem;
+    position:relative;
+    opacity:0;transform:translateY(14px);
+    animation:rise .9s cubic-bezier(.2,.7,.2,1) .15s forwards;
+  }
+  .couplet .face-label{
+    font-family:"Space Grotesk",sans-serif;font-size:.66rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--indigo);
+    display:block;margin-bottom:1.1rem;
+  }
+  .couplet .ml-line{
+    font-family:"Noto Serif Malayalam",serif;
+    font-size:clamp(1.25rem,3.6vw,1.6rem);
+    font-weight:500;line-height:1.55;color:var(--ink);
+    margin:0;
+  }
+  .couplet .threshold{
+    border:0;border-top:1px solid var(--rule);
+    width:2.4rem;margin:1.05rem 0;
+  }
+  .couplet .gloss{
+    font-family:"Fraunces",serif;font-style:italic;
+    font-size:1.04rem;color:var(--indigo);margin:0;line-height:1.5;
+  }
+  .couplet .gloss .rb{color:var(--oxblood);font-style:italic;}
+
+  /* ---- body sections ---- */
+  main{padding-bottom:1rem;}
+  p{margin:0 0 1.15rem;}
+  .lede p:first-of-type{font-size:1.16rem;line-height:1.66;}
+  .lede p:first-of-type::first-letter{
+    font-family:"Fraunces",serif;font-weight:600;color:var(--oxblood);
+    font-size:3.3rem;line-height:.8;float:left;padding:.32rem .55rem 0 0;
+  }
+
+  .confidence{
+    font-size:.92rem;color:var(--ink-soft);font-style:italic;
+    border-left:2px solid var(--rule);padding:.1rem 0 .1rem 1rem;
+    margin:1.6rem 0 2.4rem;
+  }
+
+  section.figure{margin:3rem 0;}
+  .fig-head{
+    display:flex;align-items:baseline;gap:.9rem;
+    border-bottom:1px solid var(--rule);padding-bottom:.55rem;margin-bottom:1.2rem;
+  }
+  .numeral{
+    font-family:"Space Grotesk",sans-serif;font-weight:600;
+    color:var(--oxblood);font-size:.95rem;letter-spacing:.04em;
+    flex:0 0 auto;padding-top:.18rem;
+  }
+  h2{
+    font-family:"Fraunces",serif;font-weight:500;
+    font-size:clamp(1.45rem,3.4vw,1.85rem);
+    line-height:1.12;margin:0;letter-spacing:-.01em;
+  }
+  h2 .who{display:block;font-size:.78em;color:var(--ink-soft);font-style:italic;font-weight:400;}
+
+  h3{
+    font-family:"Space Grotesk",sans-serif;font-weight:600;
+    font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--oxblood);margin:2.2rem 0 .8rem;
+  }
+
+  /* loaded-term sneer marker, rendered as rubric */
+  .term{color:var(--oxblood-dk);}
+  em.work{font-style:italic;}
+  strong{font-weight:600;color:var(--ink);}
+
+  blockquote.aside{
+    margin:1.8rem 0;padding:1.1rem 1.3rem;background:var(--stone-deep);
+    border-left:3px solid var(--indigo);font-size:.99rem;color:var(--ink-soft);
+  }
+  blockquote.aside p{margin:0;}
+
+  /* ---- coda ---- */
+  section.coda{
+    margin:3.6rem 0 2.4rem;border-top:2px solid var(--oxblood);padding-top:1.8rem;
+  }
+  ol.layers{margin:1.2rem 0;padding:0;counter-reset:layer;list-style:none;}
+  ol.layers li{
+    position:relative;padding-left:2.4rem;margin-bottom:1.1rem;counter-increment:layer;
+  }
+  ol.layers li::before{
+    content:counter(layer);position:absolute;left:0;top:.05rem;
+    font-family:"Space Grotesk",sans-serif;font-weight:600;color:var(--oxblood);
+    border:1px solid var(--oxblood);border-radius:50%;
+    width:1.6rem;height:1.6rem;display:grid;place-items:center;font-size:.82rem;
+  }
+
+  /* ---- reading list ---- */
+  section.refs{margin:3rem 0;border-top:1px solid var(--rule);padding-top:1.6rem;}
+  .refs h2{font-size:1.3rem;margin-bottom:1.1rem;}
+  .refs h3{margin-top:1.4rem;}
+  ul.cite{list-style:none;margin:0;padding:0;}
+  ul.cite li{
+    padding-left:1.1rem;position:relative;margin-bottom:.55rem;
+    font-size:.97rem;line-height:1.5;color:var(--ink-soft);
+  }
+  ul.cite li::before{content:"—";position:absolute;left:0;color:var(--oxblood);}
+  ul.cite li b{color:var(--ink);font-weight:500;}
+
+  footer{
+    border-top:1px solid var(--rule);margin-top:2.4rem;
+    padding:1.6rem 0 4rem;font-size:.86rem;color:var(--ink-soft);
+  }
+  footer .eyebrow{display:block;margin-bottom:.5rem;}
+
+  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion:reduce){
+    .couplet{animation:none;opacity:1;transform:none;}
+  }
+  a{color:var(--oxblood-dk);text-decoration-thickness:1px;text-underline-offset:2px;}
+  a:focus-visible,*:focus-visible{outline:2px solid var(--indigo);outline-offset:3px;}
+</style>
+</head>
+<body>
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a class="home" href="../../">&larr; Home</a>
+  <span class="sep">/</span>
+  <a class="crumb" href="../">Articles</a>
+</nav>
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">A note · philosophy</span>
+    <h1 class="title">The Other and Its <em>Discontents</em></h1>
+    <p class="subtitle">The philosophical threads behind one Malayalam couplet</p>
+
+    <div class="couplet" role="figure" aria-label="The couplet and its gloss">
+      <span class="face-label">The line &nbsp;·&nbsp; its gloss</span>
+      <p class="ml-line">ആരാന്റെ സെമിനാറിൽ വാ, എന്റെ 'വിളമ്പൽ' കാണാൻ</p>
+      <hr class="threshold">
+      <p class="gloss">(An arch reverse-<span class="rb">'othering'</span> for utilitarian appropriation)</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="lede">
+      <p>The couplet's parenthetical leans on a loaded word — <span class="term">'othering'</span> — and disarms it on purpose. To see what the disarming costs and what it earns, it helps to lay out the apparatus the word carries. What follows is a short map of the figures it touches, in rough order of descent: from the neutral metaphysical <em>Other</em> down to the pejorative social <span class="term">'othering'</span>, and back up again to the one thinker who turns the whole thing on its head.</p>
+    </div>
+
+    <p class="confidence">A note on confidence: the attributions, works, and dates below are established scholarship. The final section — how this bears on the couplet — is interpretive, and marked as such.</p>
+
+    <section class="orientation">
+      <div class="fig-head"><h2>The two faces of “the Other”</h2></div>
+      <p>The single biggest source of confusion here is that <strong>“the Other” names two different things</strong> that share a word.</p>
+      <p><strong>Alterity (the neutral sense).</strong> The Other as <em>another consciousness</em> — the bare fact that there are minds not my own, given to me differently from how I am given to myself. A structural, descriptive problem: how do I know there are other subjects at all?</p>
+      <p><strong><span class="term">'Othering'</span> (the pejorative sense).</strong> A <em>verb</em> — the operation by which a dominant group constitutes someone as alien, lesser, or marginal in order to secure its own centrality. Normative and critical: <span class="term">'othering'</span> is something done <em>to</em> people, and it is bad.</p>
+      <p>Almost every dispute in this territory is really a dispute about which face is in play. The couplet exploits exactly this fork: it invokes “the other” (the innocent sense — <em>somebody else's</em> seminar) while <em>naming</em> the loaded sense only to refuse it.</p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">I</span><h2>The root: recognition<span class="who">G. W. F. Hegel</span></h2></div>
+      <p>The whole tradition grows from Hegel's <em class="work">Phenomenology of Spirit</em> (1807), and specifically the <strong>master–slave (lord–bondsman) dialectic</strong>. Hegel's claim is radical: self-consciousness is not self-sufficient. I become a self only by being <em>recognised</em> (<em>Anerkennung</em>) by another self-consciousness. The Other is therefore <em>constitutive</em> of me, not an optional extra. The dialectic stages a struggle in which one consciousness dominates and the other serves — and, in the famous twist, it is the <em>bondsman</em>, through labour on the world, who develops the richer selfhood.</p>
+      <p>Everything downstream — Sartre's conflict, de Beauvoir's subordinated woman, the colonial relation — is a variation on this single insight: <strong>the self is built through the Other, and that building can go wrong.</strong></p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">II</span><h2>The problem stated<span class="who">Edmund Husserl</span></h2></div>
+      <p>Husserl (<em class="work">Cartesian Meditations</em>, Fifth Meditation, 1931) gives the phenomenological statement of the neutral sense. How is the Other <em>given</em> to me? I never have direct access to another's inner life; I encounter a body “over there” resembling mine, and through what Husserl calls <em>analogical appresentation</em> I grasp it as housing an <em>alter ego</em> — another “I.” The Other is constituted in my experience, yet given precisely as that which exceeds it. This is the dignified, difficult version of the problem — and it sets the table for the revolt against it.</p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">III</span><h2>Solipsism and the analytic “other minds”<span class="who">Bertrand Russell &amp; the analytic tradition</span></h2></div>
+      <p>Analytic philosophy meets the same neutral problem under a different name: the <strong>Problem of Other Minds</strong>. <strong>Solipsism</strong> is its limiting, sceptical case — the position that only my own mind can be known to exist (or, stronger, only my mind exists at all). Where the phenomenologists describe how the Other is given, the analytic question is blunter: can the existence of other minds be <em>proved</em> — by analogy with my own case, by inference to the best explanation, by Wittgenstein's appeal to public criteria?</p>
+      <p>Russell handled solipsism with characteristic lightness. In <em class="work">Human Knowledge: Its Scope and Limits</em> (1948) he relays a letter from the logician <strong>Christine Ladd-Franklin</strong>, who wryly declared herself a solipsist and professed surprise that there weren't <em>more</em> of them — to which Russell, deadpan, replied that coming from a logician her surprise surprised him. She was plainly in on the joke: a logician of her calibre would have seen the self-undermining point at once, that the moment a solipsist wishes for company — or writes a letter expecting a reader — the game is already conceded. Solipsism, on Russell's reckoning, is hard to refute in logic and impossible to believe in life.</p>
+      <blockquote class="aside"><p>The comedy has a serious edge: a solipsist hoping to recruit fellow solipsists is the exact inverse of the figure in our couplet — the performer who, far from doubting his audience, depends on it utterly while treating it as mere scenery.</p></blockquote>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">IV</span><h2>The Look, and “Hell is other people”<span class="who">Jean-Paul Sartre</span></h2></div>
+      <p>Sartre supplies the darkest version of the neutral sense, in <em class="work">Being and Nothingness</em> (1943). His key figure is <strong>the Look (<em>le regard</em>)</strong>. As a pure subject I am freedom, the centre of my own world. But when the Other looks at me, I become an <em>object</em> in <em>their</em> world — fixed, classified, judged, my freedom stolen. The other person drains my world towards themselves; I am the man caught mid-keyhole, seen. This <em>is</em> <span class="term">'othering'</span> as objectification, described from the inside.</p>
+      <p>The famous line — <strong>“Hell is other people” (“L'enfer, c'est les autres”)</strong> — closes his 1944 play <em class="work">Huis Clos</em> (<em class="work">No Exit</em>): three dead characters locked in a room, tormenting one another for eternity, with no torturer but each other.</p>
+      <p>The crucial nuance is that Sartre thought the line <em>badly</em> misread as plain misanthropy. He insisted he did not mean that other people are hell. He meant that we know ourselves <em>through</em> others' judgements: the Other holds a mirror we cannot escape. If our relations are twisted or corrupt, that mirror shows a hellish self, and we live imprisoned in others' verdicts. Hell is not other people as such — it is bad faith conducted <em>through</em> other people. (That machinery, precisely, is what the satire runs on: the grandstander who exists only in the host's approving gaze.)</p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">V</span><h2>Not Sartre: the stranger and solidarity<span class="who">Albert Camus</span></h2></div>
+      <p>It is worth settling a common mix-up: the “hell” line is Sartre's, not Camus's — and the contrast is instructive, because Camus's relation to the Other runs the opposite way. Camus has a <em>stranger</em>, but it is the <strong>estranged self</strong>: Meursault in <em class="work">L'Étranger</em> (1942), condemned less for murder than for being illegible to others. And Camus has a bond Sartre lacks: in <em class="work">The Rebel</em> (1951), rebellion against the absurd issues in <strong>solidarity</strong> — the move from “I rebel” to “we exist.” Where Sartre's Other is a thief of my freedom, Camus's revolt discovers the Other as a <em>comrade</em> in a shared condition. The absurd and the outsider are Camus; the Look and “hell is other people” are Sartre.</p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">VI</span><h2>The Other turned upward<span class="who">Emmanuel Levinas</span></h2></div>
+      <p>Levinas (<em class="work">Totality and Infinity</em>, 1961; <em class="work">Otherwise than Being</em>, 1974) performs the reversal that makes the rest of this note matter. The entire Western tradition — Husserl and Sartre included — has tried, he argues, to <em>reduce the Other to the Same</em>: to comprehend, categorise, totalise the Other within my own horizon. That reduction is the original violence.</p>
+      <p>Against it he sets <strong>the face (<em>le visage</em>)</strong>. The face is not a thing I perceive and file; it <em>commands</em> me. It issues an infinite ethical demand — answer for me — before I have chosen anything. From this comes his signature claim: <strong>ethics is first philosophy</strong>. My responsibility <em>for</em> the Other precedes my freedom and even my being. This is also the deepest refutation of solipsism, but not the analytic one: where the analytic tradition tries to <em>argue</em> its way out, Levinas says the face <strong>ruptures</strong> the solipsistic totality before any argument can begin.</p>
+      <p>The terms that matter here are <strong>welcome</strong> and <strong>hospitality</strong>: the genuinely positive relation to the Other is to receive them, to make room. Levinas is the philosopher of the Other as the one I am <em>for</em> — which is exactly the relation the satire's target parodies.</p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">VII</span><h2>Woman as the Other<span class="who">Simone de Beauvoir</span></h2></div>
+      <p><em class="work">The Second Sex</em> (1949) is where the neutral Other becomes the <em>social operation</em> of <span class="term">'othering'</span>. Taking Hegel's recognition-struggle and Sartre's self/other (she was his lifelong interlocutor), de Beauvoir argues that in patriarchal culture <strong>man sets himself up as the Subject, the Absolute, the norm — and defines woman as the Other</strong>, the inessential, defined only relative to him. Man is the “One”; woman is what he is not.</p>
+      <p>This is the decisive move for the modern usage: <span class="term">'othering'</span> as a <em>one-directional, asymmetrical subordination</em>, not a mutual struggle for recognition. (Her separate thesis — that one <em>becomes</em> rather than is born a woman — supplies the constructivist engine: the Other is <em>made</em>, not found.) De Beauvoir is the bridge from German idealism to the critical-theoretical sense of the term the couplet plays with.</p>
+    </section>
+
+    <section class="figure">
+      <div class="fig-head"><span class="numeral">VIII</span><h2><span class="term">'Othering'</span> becomes a verb<span class="who">Edward Said &amp; Gayatri Spivak</span></h2></div>
+      <p>The pejorative sense hardens into a technical instrument in postcolonial theory. Said's <em class="work">Orientalism</em> (1978) shows how the West produced “the Orient” as its exotic, irrational Other — a discursive construction that served, and justified, domination. Spivak's <em class="work">Can the Subaltern Speak?</em> (1988) asks whether the colonised Other can be heard at all, or only ever spoken <em>for</em>. Here <strong>“to other”</strong> settles fully into the lexicon as a transitive verb of power.</p>
+      <p>By the time the word reaches everyday critical usage, it carries all of this: a near-automatic charge of domination, asymmetry, and bad conscience. <em>That</em> is the freight the parenthetical knows it is handling.</p>
+    </section>
+
+    <section class="coda">
+      <span class="eyebrow">Back to the couplet</span>
+      <div class="fig-head" style="border-bottom:none;margin-bottom:.6rem;"><h2>How this bears on the line</h2></div>
+      <p style="font-style:italic;color:var(--ink-soft);">Interpretive — a reading, not a claim about authorial intent.</p>
+      <ol class="layers">
+        <li><strong>The term-level move.</strong> The gloss announces full awareness that <span class="term">'othering'</span> is always pejorative (de Beauvoir → Said → Spivak), then deliberately <em>refuses</em> the operation: it uses the bare word “other” in its innocent sense — <em>somebody else's</em> seminar — while flagging, with a wink, that it is not doing the loaded one. It <em>utilises</em> the other without <span class="term">'othering'</span> the other. “Arch” is the right register because the act is neither careless nor wicked but knowing — a scrupulous, playful disarming of a loaded term for satirical use. That is the reverse-<span class="term">'othering'</span>: the operation run backwards, its charge defused.</li>
+        <li><strong>The Levinasian undertow.</strong> The scene parodies Levinasian <strong>hospitality</strong>. <span class="ml">വിളമ്പൽ</span> — serving, dishing out — is the <em>host's</em> gesture. The hypocrite is a <em>guest</em> in <span class="ml">ആരാന്റെ</span> seminar (hospitality received) and repays it by usurping the host's role, converting the host's room into a stage for the self. Levinas's positive Other-relation is welcome; the target's move is its inversion — welcome accepted and annexed.</li>
+        <li><strong>The Sartrean engine.</strong> The grandstander exists only in the approving Look of host and audience; his lofty performance is bad faith conducted through others' gaze — Sartre's “hell,” exactly. The satire works because it ventriloquises that gaze-dependence and lets it expose itself.</li>
+      </ol>
+      <p>So a two-line Malayalam jab quietly threads recognition (Hegel), the objectifying Look (Sartre), the sceptical limit of the solitary mind (Russell's solipsist), the social manufacture of the Other (de Beauvoir), the critical verb (Said and Spivak), and the hospitality it parodies (Levinas) — while the gloss steps outside all of it to wink at the reader.</p>
+    </section>
+
+    <section class="refs">
+      <h2>A short reading list</h2>
+      <h3>Primary</h3>
+      <ul class="cite">
+        <li><b>Hegel, G. W. F.</b> <em>Phenomenology of Spirit</em> (1807) — §§178–196, lordship and bondage.</li>
+        <li><b>Husserl, E.</b> <em>Cartesian Meditations</em> (1931) — Fifth Meditation, on the alter ego.</li>
+        <li><b>Russell, B.</b> <em>Human Knowledge: Its Scope and Limits</em> (1948) — on solipsism and the Ladd-Franklin anecdote.</li>
+        <li><b>Sartre, J.-P.</b> <em>Being and Nothingness</em> (1943), “The Look”; and the play <em>Huis Clos / No Exit</em> (1944).</li>
+        <li><b>Camus, A.</b> <em>The Stranger</em> (1942); <em>The Rebel</em> (1951).</li>
+        <li><b>Levinas, E.</b> <em>Totality and Infinity</em> (1961); <em>Otherwise than Being</em> (1974).</li>
+        <li><b>de Beauvoir, S.</b> <em>The Second Sex</em> (1949) — Introduction, “Woman as Other.”</li>
+        <li><b>Said, E.</b> <em>Orientalism</em> (1978). &nbsp; <b>Spivak, G. C.</b> <em>Can the Subaltern Speak?</em> (1988).</li>
+      </ul>
+      <h3>Entry points</h3>
+      <ul class="cite">
+        <li><i>Stanford Encyclopedia of Philosophy</i> — entries on Levinas, Sartre, de Beauvoir, Hegel's Dialectics, Phenomenology, and Other Minds.</li>
+        <li><i>Internet Encyclopedia of Philosophy</i> — entries on Sartre and Levinas.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span class="eyebrow">Colophon</span>
+    A companion note to a Malayalam satirical couplet. Attributions and dates follow standard scholarship; the closing reading is interpretive. Set in Fraunces, Spectral, and Noto Serif Malayalam.
+    <br><br>
+    <strong>Authorship.</strong> Researched and written collaboratively by Surendran and Claude (Anthropic). The original question, framing, and editorial direction are Surendran's; the wider research, drafting, and synthesis were carried out together with Claude.
+  </footer>
+
+</div>
+</body>
+</html>

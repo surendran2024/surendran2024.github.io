@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do ChatGPT and Claude Bury Chomsky? AI and the Impossible-Languages Test</title>
+<meta name="description" content="Large language models like ChatGPT and Claude learn grammar from raw data with no Universal Grammar. Does that bury Chomsky — or has the debate moved to 'impossible languages'? A balanced, sourced essay.">
+<style>
+  :root{
+    --bg:#0f1216; --ink:#e9e3d6; --muted:#a39a8a; --line:#2b3038;
+    --accent:#e0915a; --accent2:#6cb6d6; --gold:#cda45f;
+    --card:#171b21; --card2:#1c2128;
+    --shadow:0 1px 3px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.40);
+    --maxw:820px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  .crumbs{max-width:var(--maxw); margin:0 auto; padding:20px 22px 0;
+    font-family:"Helvetica Neue",Arial,system-ui,sans-serif; font-size:.85rem;
+    display:flex; align-items:center; gap:.6rem; flex-wrap:wrap}
+  .crumbs a.home{background:var(--accent); color:#1a1208; font-weight:700; text-decoration:none;
+    padding:.42rem 1rem; border-radius:999px; letter-spacing:.02em; transition:background .2s ease}
+  .crumbs a.home:hover,.crumbs a.home:focus-visible{background:var(--gold)}
+  .crumbs .sep{color:var(--muted)}
+  .crumbs a.crumb{color:var(--ink); text-decoration:none; border-bottom:1px solid rgba(224,145,90,.5)}
+  .crumbs a.crumb:hover,.crumbs a.crumb:focus-visible{color:var(--accent)}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Iowan Old Style","Times New Roman",serif;
+    font-size:19px; line-height:1.74; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .sans{font-family:"Helvetica Neue",Arial,system-ui,sans-serif}
+
+  /* HERO */
+  header.hero{
+    background:radial-gradient(120% 140% at 80% 0%,#241a12 0%,#13171d 45%,#0b0e12 100%);
+    color:#f4ecdc; padding:84px 0 66px; border-bottom:3px solid var(--gold);
+    position:relative;
+  }
+  header.hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:.5}
+  .hero .wrap{max-width:820px}
+  .kicker{font-family:"Helvetica Neue",Arial,sans-serif; text-transform:uppercase;
+    letter-spacing:.22em; font-size:12.5px; color:var(--gold); font-weight:700; margin:0 0 20px}
+  h1{font-size:clamp(31px,5.6vw,52px); line-height:1.1; margin:0 0 22px; font-weight:700; letter-spacing:-.015em; color:#fbf5e9}
+  .dek{font-size:clamp(18px,2.4vw,22px); line-height:1.5; color:#d6cab2; margin:0 0 26px; font-style:italic}
+  .byline{font-family:"Helvetica Neue",Arial,sans-serif; font-style:normal; font-size:14px;
+    color:#a89c84; letter-spacing:.02em; border-top:1px solid rgba(205,164,95,.25); padding-top:18px; max-width:580px}
+
+  /* ABSTRACT */
+  .abstract{background:linear-gradient(180deg,var(--card2),var(--card)); border:1px solid var(--line);
+    border-left:4px solid var(--accent); box-shadow:var(--shadow); border-radius:8px; padding:26px 30px; margin:46px 0 10px}
+  .abstract h2{font-family:"Helvetica Neue",Arial,sans-serif; text-transform:uppercase; letter-spacing:.14em;
+    font-size:13px; color:var(--accent); margin:0 0 12px}
+  .abstract p{font-size:17.5px; line-height:1.68; margin:0 0 14px; color:#ded7c8}
+  .abstract em{color:#f0e8d8}
+  .keywords{font-family:"Helvetica Neue",Arial,sans-serif; font-size:13.5px; color:var(--muted); margin-top:6px}
+  .keywords b{color:var(--ink)}
+
+  main{padding:18px 0 30px}
+  h2.sec{font-size:clamp(23px,3.4vw,31px); line-height:1.2; margin:56px 0 8px; font-weight:700; letter-spacing:-.01em; color:#f6efe1}
+  h2.sec .num{display:block; font-family:"Helvetica Neue",Arial,sans-serif; font-size:13px; letter-spacing:.2em;
+    color:var(--gold); text-transform:uppercase; margin-bottom:6px; font-weight:700}
+  p{margin:0 0 20px}
+  em{color:#f3ecdd}
+  a{color:var(--accent2)}
+  sup.cite{font-family:"Helvetica Neue",Arial,sans-serif; font-size:11.5px; font-weight:700;
+    vertical-align:super; line-height:0; padding:0 1px}
+  sup.cite a{color:var(--accent); text-decoration:none}
+  sup.cite a:hover{text-decoration:underline}
+  .lead::first-letter{font-size:64px; float:left; line-height:.82; padding:7px 11px 0 0; color:var(--accent); font-weight:700}
+
+  /* PULL QUOTE */
+  blockquote.pull{margin:38px 0; padding:6px 0 6px 28px; border-left:4px solid var(--gold);
+    font-size:24px; line-height:1.42; color:#f1e8d6; font-style:italic; font-weight:400}
+  blockquote.pull cite{display:block; font-size:14px; font-style:normal; color:var(--muted);
+    font-family:"Helvetica Neue",Arial,sans-serif; margin-top:12px; letter-spacing:.02em}
+
+  /* FIGURE / CARD WRAPPERS */
+  .figure{margin:42px 0; width:min(1140px,94vw); margin-left:50%; transform:translateX(-50%);
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    box-shadow:var(--shadow); overflow:hidden}
+  .figure .fhead{background:#0b0e12; color:#f4ecdc; padding:16px 24px; font-family:"Helvetica Neue",Arial,sans-serif;
+    border-bottom:1px solid var(--line)}
+  .figure .fhead .ft{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .figure .fhead .fc{font-size:17px; margin-top:3px; line-height:1.3; color:#ece4d4}
+  .figure .fbody{padding:26px 24px}
+  .figcap{font-family:"Helvetica Neue",Arial,sans-serif; font-size:13px; color:var(--muted);
+    padding:0 24px 18px; line-height:1.55}
+  .figcap em{color:#cabda6}
+
+  /* MERMAID */
+  .mermaid{display:flex; justify-content:center; background:transparent; font-family:"Helvetica Neue",Arial,sans-serif}
+
+  /* TIMELINE */
+  .tl{list-style:none; margin:0; padding:0; position:relative}
+  .tl::before{content:""; position:absolute; left:78px; top:6px; bottom:6px; width:2px; background:var(--line)}
+  .tl li{position:relative; padding:0 0 22px 108px; min-height:34px}
+  .tl li:last-child{padding-bottom:0}
+  .tl .yr{position:absolute; left:0; top:0; width:62px; text-align:right;
+    font-family:"Helvetica Neue",Arial,sans-serif; font-weight:700; font-size:15px; color:var(--accent2)}
+  .tl .dot{position:absolute; left:71px; top:4px; width:16px; height:16px; border-radius:50%;
+    background:var(--card); border:3px solid var(--gold); z-index:1}
+  .tl li.key .dot{background:var(--accent); border-color:var(--accent); box-shadow:0 0 0 4px rgba(224,145,90,.15)}
+  .tl .ev{font-family:"Helvetica Neue",Arial,sans-serif; font-size:15.5px; line-height:1.5; color:#cfc7b6}
+  .tl .ev b{color:#f3ecdd}
+
+  /* TWO-CAMP COMPARISON */
+  .versus{display:grid; grid-template-columns:1fr 1fr; gap:0}
+  .versus .col{padding:24px 22px}
+  .versus .col.nat{background:#211912; border-right:1px solid var(--line)}
+  .versus .col.emp{background:#10202a}
+  .versus h4{font-family:"Helvetica Neue",Arial,sans-serif; margin:0 0 4px; font-size:18px}
+  .versus .nat h4{color:var(--accent)} .versus .emp h4{color:var(--accent2)}
+  .versus .tag{font-family:"Helvetica Neue",Arial,sans-serif; font-size:11.5px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:14px; display:block}
+  .versus ul{margin:0; padding:0; list-style:none; font-family:"Helvetica Neue",Arial,sans-serif; font-size:14.5px; line-height:1.5}
+  .versus li{padding:9px 0 9px 22px; position:relative; border-top:1px solid rgba(255,255,255,.07); color:#cfc7b6}
+  .versus li:first-child{border-top:none}
+  .versus .nat li::before{content:"\25C6"; position:absolute; left:0; color:var(--accent); font-size:11px; top:11px}
+  .versus .emp li::before{content:"\25C6"; position:absolute; left:0; color:var(--accent2); font-size:11px; top:11px}
+
+  /* IMPOSSIBLE-LANGUAGE DIAGRAM */
+  .ilang{font-family:"Helvetica Neue",Arial,sans-serif}
+  .ilang .row{display:flex; gap:14px; align-items:flex-start; margin-bottom:18px}
+  .ilang .badge{flex:0 0 92px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    padding:6px 8px; border-radius:6px; text-align:center; line-height:1.3}
+  .ilang .ok{background:#15331f; color:#7fd99b; border:1px solid #225c38}
+  .ilang .bad{background:#34161a; color:#eda1a6; border:1px solid #5e2730}
+  .ilang .sent{font-size:16px; line-height:1.5; color:#ded7c8; padding-top:3px}
+  .ilang .sent .hl{background:rgba(205,164,95,.22); color:#f3e3c4; padding:1px 5px; border-radius:3px; font-weight:600}
+  .ilang .note{font-size:13px; color:var(--muted); margin-top:2px}
+  .ilang .note b{color:#e3dccb}
+
+  /* REFERENCES */
+  .refs{margin:48px 0 0; background:#12161b; border:1px solid var(--line); border-radius:12px; padding:28px 30px}
+  .refs h2{font-family:"Helvetica Neue",Arial,sans-serif; font-size:14px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 18px}
+  .refs ol{margin:0; padding-left:26px; font-family:"Helvetica Neue",Arial,sans-serif; font-size:13.5px; line-height:1.6; color:#b8b0a0}
+  .refs li{margin-bottom:11px}
+  .refs li em{color:#d8d0bf}
+  .refs li a{color:var(--accent2); word-break:break-word}
+
+  footer{border-top:1px solid var(--line); margin-top:42px; padding:30px 0 60px; color:var(--muted);
+    font-family:"Helvetica Neue",Arial,sans-serif; font-size:13px; line-height:1.6}
+
+  @media(max-width:620px){
+    body{font-size:18px}
+    .versus{grid-template-columns:1fr}
+    .versus .col.nat{border-right:none; border-bottom:1px solid var(--line)}
+    .tl::before{left:54px} .tl li{padding-left:80px} .tl .yr{width:42px; font-size:13px}
+    .tl .dot{left:47px}
+    .ilang .row{flex-direction:column; gap:4px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a class="home" href="../../">&larr; Home</a>
+  <span class="sep">/</span>
+  <a class="crumb" href="../">Articles</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Linguistics &middot; Cognitive Science &middot; Artificial Intelligence</p>
+    <h1>Do ChatGPT and Claude Bury Chomsky?</h1>
+    <p class="dek">Today's language models learned grammar from raw text with no Universal Grammar built in. So is Noam Chomsky's great theory finished &mdash; or has the argument quietly moved to a stranger battlefield: languages that no human could ever learn?</p>
+    <p class="byline"><strong style="color:#e3dccb">By Surendran and Claude (Anthropic).</strong></p>
+    <p class="byline">An essay on Universal Grammar, large language models, and the &ldquo;impossible-languages&rdquo;&nbsp;test &mdash; written to be read by anyone, sourced for those who want to dig deeper.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>For half a century, Noam Chomsky's claim that humans are born with an innate <em>Universal Grammar</em> dominated the science of language. Its central argument was that children master grammar from input far too sparse and messy to explain what they end up knowing &mdash; so the knowledge must be partly built in. Large language models (LLMs) such as ChatGPT and Claude appear to upend this: trained only to predict the next word across enormous text, they acquire fluent grammar with no innate rules at all.</p>
+    <p>This essay asks whether that achievement refutes Chomsky, and examines a common charge &mdash; that his defenders have &ldquo;moved the goalposts&rdquo; by retreating to the argument from <em>impossible languages</em>: rule systems no human language uses, which a mind equipped with Universal Grammar supposedly cannot learn. It traces the surprising empirical history of that test, from Mitchell and Bowers (2020), through Chomsky's 2023 broadside, to the 2024 award-winning study that turned the argument on its head. The conclusion is deliberately even-handed: the new evidence shows that good learners <em>are</em> biased toward humanlike languages, vindicating part of the nativist picture &mdash; yet it locates the source of that bias in general information-processing efficiency rather than a dedicated language organ, which is exactly where the nativist still needs to win.</p>
+    <p class="keywords"><b>Keywords:</b> Universal Grammar; poverty of the stimulus; large language models; impossible languages; information locality; nativism vs. empiricism</p>
+  </section>
+
+  <main>
+
+    <h2 class="sec" id="question"><span class="num">I. The Question</span>Does a chatbot bury Chomsky?</h2>
+    <p class="lead">The puzzle is easy to feel even before it is easy to state. A child soaks up her native tongue in a few years from the ordinary chatter around her, never studying a grammar book, and ends up able to produce sentences she has never heard. Noam Chomsky built a revolution in linguistics on the idea that this feat is impossible unless something about grammar is already wired into the human brain.<sup class="cite"><a href="#r2">2</a></sup> Yet here are machines &mdash; a system like ChatGPT or Claude, perhaps the very one you used this morning &mdash; that were handed no grammatical rules whatsoever, only oceans of text, and now write more fluently than many people. If language needed an innate human blueprint, how did a pile of statistics learn to talk?</p>
+    <p>It is tempting to read the success of LLMs as a verdict: Chomsky was wrong, language is &ldquo;just&rdquo; pattern-matching, case closed. The honest answer is more interesting, because the machines have not so much settled the old debate as relocated it. To see how, we need to be precise about what Chomsky actually claimed, what the machines actually did, and what an exotic thought experiment about &ldquo;impossible languages&rdquo; is really testing.</p>
+
+    <h2 class="sec" id="chomsky"><span class="num">II. What Chomsky Actually Claimed</span>Universal Grammar and the poverty of the stimulus</h2>
+    <p>In the late 1950s Chomsky overturned the reigning behaviourist view that language is a habit drilled in by reinforcement. His counter was partly logical. Consider how English forms a yes&ndash;no question. From <em>&ldquo;The boy is happy&rdquo;</em> we get <em>&ldquo;Is the boy happy?&rdquo;</em>, which might suggest a simple rule: move the word <em>is</em> to the front. But that rule collapses on <em>&ldquo;The boy who is tall is happy&rdquo;</em>, which becomes the gibberish <em>&ldquo;Is the boy who tall is happy?&rdquo;</em> rather than the correct <em>&ldquo;Is the boy who is tall happy?&rdquo;</em> Children almost never make this mistake. They behave from the start as though grammar operates on hierarchical structures &mdash; phrases nested inside phrases &mdash; not on the linear string of words. Crucially, the evidence that would teach them the difference is rarely present in what they hear.<sup class="cite"><a href="#r8">8</a></sup></p>
+    <p>This is the famous <em>poverty of the stimulus</em>: the data a child receives underdetermines the grammar she ends up with, so the gap must be filled by prior structure she brought to the task.<sup class="cite"><a href="#r2">2</a></sup> Chomsky's name for that prior structure was <em>Universal Grammar</em> (UG) &mdash; an innate endowment, sometimes pictured as a &ldquo;language acquisition device,&rdquo; that constrains the space of grammars a human will even consider. On this view a child is not a blank slate guessing freely; she is a specialised learner who can entertain only certain kinds of rules and is, in effect, deaf to others.</p>
+    <p>Two implications matter for everything that follows. First, UG is fundamentally a claim about <em>constraints</em>: it predicts not only what languages look like but what they could never look like. As the linguist Tim Hunter puts it, it makes no sense to say humans are hardwired to learn certain things without also saying they are hardwired <em>not</em> to learn others.<sup class="cite"><a href="#r13">13</a></sup> Second, the original argument leaned heavily on a premise about learnability: that grammar simply could not be extracted from data by general-purpose statistical learning. That premise is precisely what the machines would later test.</p>
+
+    <blockquote class="pull">&ldquo;Language is too complex to be learned from data alone; therefore it must be innate.&rdquo; For decades this was the nativist's trump card. The machines took it away.</blockquote>
+
+    <h2 class="sec" id="machine"><span class="num">III. The Machines That Learned to Talk</span>How LLMs reopened a closed case</h2>
+    <p>A large language model is, mechanically, almost embarrassingly simple in concept. It is a neural network &mdash; a web of numerical connections &mdash; trained to do one thing: predict the next word in a sequence. Show it billions of word-blocks, let it guess what comes next, nudge its connections toward the right answer each time, and after enough nudges it generates strikingly fluent prose.<sup class="cite"><a href="#r14">14</a></sup> No syntactic rules are programmed in. No Universal Grammar module sits inside it. Its training procedure ignores essentially everything linguists have discovered about the architecture of sentences.</p>
+    <p>That such a system works at all is a genuine blow to one historical version of the nativist argument. If grammar were truly unlearnable from data by general statistical means, models like ChatGPT and Claude should not exist &mdash; yet they do, and they handle subtle, hierarchical, long-distance dependencies that the old arguments said pattern-matching could never touch. To empiricists and connectionists &mdash; those who hold that linguistic knowledge comes from experience rather than innate biology &mdash; this is suggestive: if a network can wring grammar out of statistics, perhaps the human brain does something broadly similar, and UG is not strictly necessary.<sup class="cite"><a href="#r15">15</a></sup> The computational linguist Isabel Papadimitriou captures why this is more than a debating point: &ldquo;There's no animal model of language. Language models are the first thing that we can experiment on in any interventional way.&rdquo;<sup class="cite"><a href="#r12">12</a></sup></p>
+    <p>So has the question been answered? Not quite &mdash; and here the defenders of UG make a move that is either a fair refinement or a sleight of hand, depending on whom you ask.</p>
+
+    <h2 class="sec" id="goalposts"><span class="num">IV. &ldquo;Moving the Goalposts&rdquo;?</span>The retreat to impossible languages</h2>
+    <p>Faced with talking machines, Chomsky and his co-authors Ian Roberts and Jeffrey Watumull published a pointed essay in <em>The New York Times</em> in March 2023, &ldquo;The False Promise of ChatGPT.&rdquo;<sup class="cite"><a href="#r1">1</a></sup> Their argument was not that LLMs fail at language &mdash; obviously they succeed &mdash; but that their very success makes them <em>irrelevant</em> to the study of the human mind. The human child, they wrote, is endowed with a grammar that &ldquo;limits the languages we can learn&rdquo; to those with a certain &ldquo;almost mathematical elegance,&rdquo; whereas these programs &ldquo;learn humanly possible and humanly impossible languages with equal facility.&rdquo; A device that masters everything tells you nothing about a mind that is choosy. The LLM, in their phrase, is &ldquo;a lumbering statistical engine for pattern matching&rdquo; &mdash; impressive, but not a model of us.</p>
+    <p>Notice the shape of the move. The original, headline-grabbing claim was about <em>learnability</em>: grammar cannot be learned from data, therefore it is innate. Once it became undeniable that statistical learners <em>can</em> acquire grammar from data, the decisive test migrated to a different claim: an adequate model of the human faculty must be <em>biased</em> &mdash; able to learn the languages humans have while struggling with those no human could. This is where critics cry foul. The bar appears to have moved from &ldquo;language is unlearnable without UG&rdquo; to &ldquo;any adequate learner must have the right inductive biases&rdquo; &mdash; a far weaker claim that scarcely anyone disputes. That, in a sentence, is the &ldquo;moving the goalposts&rdquo; charge.</p>
+    <p>There is a fair reply. A defender argues that constraining the <em>hypothesis space</em> was always the load-bearing idea, and that learnability was only ever its most quotable consequence. Chomsky's deepest question was never &ldquo;can language be learned?&rdquo; but &ldquo;why do the world's six-thousand-odd languages cluster into such a narrow corner of the logically possible, and why do certain simple rules never appear anywhere?&rdquo; On that reading, impossible languages are not a retreat at all; they are a cleaner operationalisation of the question that motivated the theory from the beginning. The honest verdict, defended later in this essay, is that <em>both</em> sides are partly right &mdash; the emphasis genuinely shifted, but the shift was not illegitimate. What makes the episode fascinating is that the impossible-language test, once it was actually run, refused to behave the way <em>either</em> camp expected.</p>
+
+    <div class="figure">
+      <div class="fhead">
+        <div class="ft">Figure 1 &middot; The argument as a flowchart</div>
+        <div class="fc">How the debate flows from premise to open question</div>
+      </div>
+      <div class="fbody">
+        <pre class="mermaid">
+flowchart TD
+    classDef key fill:#2a1d12,stroke:#e0915a,stroke-width:2px,color:#f3e3c4;
+    classDef open fill:#10202a,stroke:#6cb6d6,stroke-width:2px,color:#dcefff;
+    A["Children learn rich grammar<br/>from sparse, messy input"] --> B["Chomsky: the gap must be filled<br/>by innate Universal Grammar"]
+    B --> C{"Premise:<br/>grammar is unlearnable<br/>from data alone"}
+    C --> D["LLMs learn fluent grammar<br/>from raw text, no rules built in"]
+    D --> E["That premise fails.<br/>Statistical learning <i>can</i> do it"]
+    E --> F["Revised test: a real model of the mind<br/>must be <b>biased</b> toward possible languages"]
+    F --> G["Impossible-language experiments"]
+    G --> H["Mitchell &amp; Bowers 2020:<br/>old network learns impossible<br/>languages just as easily"]
+    H --> I["Chomsky 2023 cites this:<br/>so LLMs cannot model humans"]
+    G --> J["Kallini et al. 2024:<br/>modern transformers learn<br/>impossible languages WORSE"]
+    J --> K["So learners ARE biased<br/>toward humanlike languages"]
+    K --> L{"But why?"}
+    L --> M["Nativist: an innate<br/>language organ (UG)"]
+    L --> N["Empiricist: information locality,<br/>a general efficiency principle"]
+    M --> O(["Open question:<br/>organ or efficiency?"])
+    N --> O
+    class B,F,K key
+    class O open
+</pre>
+      </div>
+      <p class="figcap">Read top to bottom: the old learnability argument collapses, the test is rebuilt around bias, and the evidence then reverses &mdash; leaving a single unresolved fork at the bottom.</p>
+    </div>
+
+    <div class="figure">
+      <div class="fhead">
+        <div class="ft">Figure 2 &middot; A debate in eight moves</div>
+        <div class="fc">How the question travelled from the armchair to the GPU</div>
+      </div>
+      <div class="fbody">
+        <ul class="tl">
+          <li class="key"><span class="yr">1957</span><span class="dot"></span><span class="ev"><b>Chomsky launches the revolution.</b> <em>Syntactic Structures</em> replaces behaviourist habit-learning with the idea of an internal generative grammar.</span></li>
+          <li><span class="yr">1959</span><span class="dot"></span><span class="ev"><b>Chomsky vs. Skinner.</b> His review of <em>Verbal Behavior</em> argues reinforcement cannot explain linguistic creativity.</span></li>
+          <li class="key"><span class="yr">1965</span><span class="dot"></span><span class="ev"><b>Universal Grammar formalised.</b> <em>Aspects of the Theory of Syntax</em> sets out the poverty-of-the-stimulus argument and the innate language faculty.</span></li>
+          <li><span class="yr">2002</span><span class="dot"></span><span class="ev"><b>The empirical pushback.</b> Pullum &amp; Scholz question whether the input really is as impoverished as the argument assumes.</span></li>
+          <li><span class="yr">2020</span><span class="dot"></span><span class="ev"><b>Round one to the machines.</b> Mitchell &amp; Bowers find a recurrent network learns &ldquo;impossible&rdquo; scrambled grammars about as easily as English.</span></li>
+          <li class="key"><span class="yr">2023</span><span class="dot"></span><span class="ev"><b>Chomsky's broadside.</b> &ldquo;The False Promise of ChatGPT&rdquo; cites that result: LLMs learn the impossible too, so they cannot model the human mind.</span></li>
+          <li class="key"><span class="yr">2024</span><span class="dot"></span><span class="ev"><b>The plot twist.</b> Kallini et&nbsp;al., &ldquo;Mission: Impossible Language Models&rdquo; (ACL Best Paper), show modern transformers learn impossible languages <em>worse</em> than English.</span></li>
+          <li><span class="yr">2025</span><span class="dot"></span><span class="ev"><b>The genre opens up.</b> Information locality is proposed as the principle behind the bias; follow-up studies and rebuttals multiply.</span></li>
+        </ul>
+      </div>
+      <p class="figcap">The decisive evidence reversed itself in just four years &mdash; which is why confident verdicts in either direction should be treated with caution.</p>
+    </div>
+
+    <h2 class="sec" id="twist"><span class="num">V. The Plot Twist</span>Mission: Impossible Language Models</h2>
+    <p>The phrase &ldquo;impossible language&rdquo; has a precise meaning. A possible language obeys the kinds of rules human languages actually use &mdash; rules sensitive to hierarchical structure, like &ldquo;invert the verb belonging to the main clause.&rdquo; An impossible language obeys a rule that is perfectly computable but that no human language ever adopts &mdash; for instance, &ldquo;to form a question, move the <em>third</em> word to the front,&rdquo; a rule that counts linear positions rather than tracking constituents. Tellingly, no known language anywhere has a counting rule of this kind.<sup class="cite"><a href="#r6">6</a></sup> They are, in the linguist Andrea Moro's framing, the grammatical equivalent of an impossible animal: useful precisely because building one lets you probe the boundary of the natural.</p>
+    <p>In 2020 Jeff Mitchell and Jeffrey Bowers ran the first clean experiment. Rather than invent a language from scratch &mdash; which introduces too many uncontrolled variables &mdash; they took English text and corrupted it in systematic ways, for example splitting each sentence at a random point and reversing the order of the second half. They trained identical networks on English and on these mangled variants, then tested each. The networks trained on the impossible languages were, in their words, nearly as accurate as the one trained on English.<sup class="cite"><a href="#r3">3</a></sup> This is the result Chomsky's 2023 essay leaned on. The machines, it seemed, were grammatical omnivores; they could not tell a humanlike language from a monstrous one.</p>
+    <p>Julie Kallini, then a new graduate student at Stanford, was not convinced the case was closed. Mitchell and Bowers had tested only an older recurrent architecture, not the <em>transformer</em> networks that power today's models. With Christopher Potts, Isabel Papadimitriou, Richard Futrell and Kyle Mahowald, she built a battery of twelve impossible languages &mdash; most created by shuffling words within each English sentence according to fixed patterns, alongside a full reversal and a partial reversal.<sup class="cite"><a href="#r4">4</a></sup> The most revealing was &ldquo;word hop,&rdquo; nearly identical to English except that whether a verb is singular or plural is marked not by a suffix like the <em>-s</em> in <em>runs</em>, but by a special symbol placed four words downstream. As the linguist Tim Hunter observed, nothing about &ldquo;put this marker four words later&rdquo; is computationally complicated &mdash; and yet no human language works that way.<sup class="cite"><a href="#r13">13</a></sup></p>
+    <p>They trained GPT-2-style transformers on each language and tracked learning over time. The result reversed the earlier finding: the model trained on real English learned faster and ended up better than those trained on the impossible languages. Even &ldquo;word hop,&rdquo; which differs from English only in that one subtle respect, proved measurably harder once the researchers tested precisely the distinction that set it apart.<sup class="cite"><a href="#r4">4</a></sup> In principle, the authors note, an all-powerful predictor should find the impossible languages no harder than the possible one, since most of them encode the same information.<sup class="cite"><a href="#r12">12</a></sup> The transformer was not that omnipotent predictor. It had preferences &mdash; and they leaned, at least roughly, in the human direction. The paper won a Best Paper award at the 2024 meeting of the Association for Computational Linguistics.</p>
+
+    <blockquote class="pull">Language models, like humans, prefer to learn some patterns over others. The machines turned out not to be grammatical omnivores after all.<cite>&mdash; the core finding of Kallini et al. (2024)</cite></blockquote>
+
+    <h2 class="sec" id="locality"><span class="num">VI. The Bias Without the Blueprint</span>Information locality</h2>
+    <p>Here the story takes its most consequential turn &mdash; and the one most often missed in popular summaries, including capable ones written by other AI systems. Showing that transformers prefer possible languages looks, at first glance, like a win for Chomsky: the learner <em>is</em> biased, just as a UG-equipped mind should be. But the Kallini team did not stop at the bias; they asked where it comes from. Their answer was a principle called <em>information locality</em>: roughly, that elements which depend on one another for meaning tend to sit close together in a sentence, so that the information needed to predict a word is concentrated nearby rather than scattered across long distances.<sup class="cite"><a href="#r7">7</a></sup> Human languages are shaped by this pressure &mdash; it makes them easier to produce and comprehend in real time &mdash; and it is precisely what the impossible languages violate when they fling related words far apart or hide agreement four words downstream.</p>
+    <p>The significance is hard to overstate. Information locality is not a language-specific innate rule etched into a dedicated mental organ. It is a general efficiency principle of the kind one might expect any sequence learner, biological or artificial, to be sensitive to. So the finding cuts diagonally across the old battle line. It supports the nativist's structural intuition &mdash; that an adequate learner must be biased toward humanlike languages &mdash; while undercutting the specifically Chomskyan claim that the bias must come from an innate <em>grammar faculty</em> rather than from general principles of processing and communication. The learner has a shape; the question is whether that shape is a language organ or simply the footprint of efficient computation. That, and not the headline about machines learning to talk, is where the real dispute now lives.</p>
+
+    <div class="figure">
+      <div class="fhead">
+        <div class="ft">Figure 3 &middot; The same evidence, two readings</div>
+        <div class="fc">Why &ldquo;transformers are biased&rdquo; comforts both camps &mdash; and settles neither</div>
+      </div>
+      <div class="fbody">
+        <div class="versus">
+          <div class="col nat">
+            <span class="tag">Nativist reading</span>
+            <h4>The bias vindicates us</h4>
+            <ul>
+              <li>An adequate learner must favour humanlike grammars &mdash; exactly what UG predicts.</li>
+              <li>Impossible languages are genuinely harder, so the hypothesis space really is constrained.</li>
+              <li>Moro's neuroimaging shows the brain itself treats real and unreal rules differently.</li>
+              <li>LLMs still need orders of magnitude more data than a child, so something extra aids humans.</li>
+            </ul>
+          </div>
+          <div class="col emp">
+            <span class="tag">Empiricist reading</span>
+            <h4>The source is general, not innate</h4>
+            <ul>
+              <li>The bias traces to information locality &mdash; an efficiency principle, not a grammar gene.</li>
+              <li>A network with no language organ reproduces the preference, so no organ is required.</li>
+              <li>Typological gaps may reflect processing and communication pressures, not innate bans.</li>
+              <li>Statistical and usage-based learning can build grammar from rich, structured input.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="figcap">The 2024 result is genuinely double-edged. It is evidence that learners are biased; it is not, by itself, evidence about <em>why</em>.</p>
+    </div>
+
+    <h2 class="sec" id="for"><span class="num">VII. The Case for Chomsky</span>What still favours an innate faculty</h2>
+    <p>Set the impossible-language test aside for a moment, because the nativist case never rested on it alone. The strongest independent leg is biological. In a landmark 2003 study, Musso, Moro and colleagues taught German speakers new rules drawn from Italian and Japanese &mdash; some obeying universal grammatical principles, others &ldquo;unreal&rdquo; rules using the same words but violating those principles. As learners improved at the real rules, activity in Broca's area, a classical language region, rose; learning the unreal rules produced no such specific increase, and recruited the brain differently.<sup class="cite"><a href="#r5">5</a></sup> The brain, in other words, does not appear to treat all computable rules alike &mdash; which is just what an innate, language-specific constraint would predict.</p>
+    <p>Three further considerations sustain the position. The <em>data-efficiency gap</em> is the most cited: a child is fluent after exposure to perhaps five to ten million words by age four, while an LLM consumes hundreds of billions or trillions, suggesting the child brings a powerful prior to the task.<sup class="cite"><a href="#r1">1</a></sup> <em>Structure-dependence</em> &mdash; the question-formation puzzle from Section II &mdash; remains a robust observation that children default to hierarchy over linear order. And the phenomenon of <em>creolisation</em>, in which children exposed to a grammatically thin pidgin spontaneously regularise it into a full grammar with consistent structure, suggests learners impose form that the input did not supply.<sup class="cite"><a href="#r10">10</a></sup> None of these is decisive, but together they make a serious case that something in the human learner is purpose-built.</p>
+
+    <h2 class="sec" id="against"><span class="num">VIII. The Case Against</span>Why the empiricists are not retreating</h2>
+    <p>The opposing camp has answers, and recent evidence has emboldened them. The poverty-of-the-stimulus argument was challenged on its own terms by Geoffrey Pullum and Barbara Scholz, who examined the canonical examples and argued that the input children receive is richer, and the claimed gaps less established, than the argument assumes.<sup class="cite"><a href="#r9">9</a></sup> Where Chomsky saw a logical necessity, they saw an empirical question that had not actually been settled by counting what is in the data.</p>
+    <p>A constructive alternative comes from the <em>usage-based</em> tradition. Michael Tomasello argues that children build grammar from concrete, recurring constructions in the speech around them, powered not by a language organ but by general capacities &mdash; pattern detection and, crucially, the uniquely human ability to read others' intentions.<sup class="cite"><a href="#r11">11</a></sup> Laboratory work reinforces the plausibility of the learning side: Saffran, Aslin and Newport famously showed that eight-month-old infants track statistical regularities in speech to find word boundaries, demonstrating that powerful statistical learning is present at the dawn of language.<sup class="cite"><a href="#r16">16</a></sup> Construction grammar, developed by Adele Goldberg and others, supplies the theoretical scaffolding for treating grammar as a structured inventory of learned form-meaning pairings rather than the output of an innate rule engine.<sup class="cite"><a href="#r17">17</a></sup> And the empiricist can now point to information locality as a concrete, non-innate mechanism that yields exactly the cross-linguistic biases the nativist attributes to UG.</p>
+
+    <div class="figure">
+      <div class="fhead">
+        <div class="ft">Figure 4 &middot; What makes a language &ldquo;impossible&rdquo;</div>
+        <div class="fc">Two rules a computer finds trivial that no human language uses</div>
+      </div>
+      <div class="fbody">
+        <div class="ilang">
+          <div class="row">
+            <span class="badge ok">Possible</span>
+            <div>
+              <div class="sent">Question from <em>&ldquo;The boy who is tall <span class="hl">is</span> happy&rdquo;</em> &rarr; <em>&ldquo;<span class="hl">Is</span> the boy who is tall happy?&rdquo;</em></div>
+              <div class="note">Rule tracks <b>structure</b>: move the verb of the main clause. Children adopt this automatically.</div>
+            </div>
+          </div>
+          <div class="row">
+            <span class="badge bad">Impossible</span>
+            <div>
+              <div class="sent">Question by moving the <span class="hl">third word</span>: <em>&ldquo;The tall boy is happy&rdquo;</em> &rarr; <em>&ldquo;Boy the tall is happy?&rdquo;</em></div>
+              <div class="note">Rule tracks <b>linear position</b> (counting). Computationally simple; found in <b>no</b> human language.</div>
+            </div>
+          </div>
+          <div class="row">
+            <span class="badge bad">Impossible</span>
+            <div>
+              <div class="sent">&ldquo;Word hop&rdquo;: mark a verb as plural with a symbol placed <span class="hl">four words later</span>, not with a suffix.</div>
+              <div class="note">Scatters related information across distance &mdash; violating <b>information locality</b>. Transformers learn it slower; humans never use it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="figcap">The empirical question is not whether such rules can be stated &mdash; they obviously can &mdash; but whether a learner finds them as natural as the structural ones. Increasingly, the answer for both humans and modern models is: no.</p>
+    </div>
+
+    <h2 class="sec" id="verdict"><span class="num">IX. The Verdict</span>The goalposts were never quite where either side thought</h2>
+    <p>So, did the machines bury Chomsky? No &mdash; but they did not vindicate him cleanly either. The fairest reading is that LLMs demolished one specific, historically prominent version of the nativist argument: the claim that grammar is flat-out unlearnable from data by general means. That claim is dead; statistical learners plainly do acquire grammar. What survives, and what the new work actually sharpens, is the subtler and more durable idea that any successful learner must come to the task <em>biased</em> &mdash; predisposed toward some grammars and resistant to others.</p>
+    <p>On the &ldquo;moving the goalposts&rdquo; charge, the verdict is split and, we think, should stay split. Descriptively, the emphasis did move: the public argument slid from learnability to inductive bias once the first gave way. To that extent the observation is fair. But the move is not intellectually dishonest, because the constrained-hypothesis-space idea was arguably the load-bearing commitment all along, with learnability merely its most rhetorically convenient expression. The most accurate thing to say is not that Chomsky moved the goalposts, but that the whole field discovered the goalposts were standing in a slightly different place than either side had assumed.</p>
+    <p>And the genuinely open question &mdash; the one worth carrying forward &mdash; is no longer &ldquo;can language be learned without innate structure?&rdquo; but &ldquo;what is the nature of the structure every adequate learner must have?&rdquo; The impossible-language program has shown, impressively and against many expectations, <em>that</em> good learners are biased. It has not yet shown <em>why</em>: whether the bias is a dedicated language organ, as Chomsky holds, or the footprint of general principles like information locality and the pressures of efficient communication, as his critics suspect. That is where nativism must now make its stand, and where the evidence is, for once, genuinely undecided. As one philosopher of cognitive science put it of this research, its value is that &ldquo;it opens up so many different avenues and questions.&rdquo;<sup class="cite"><a href="#r12">12</a></sup> The mystery Chomsky was thought to have closed has been reopened &mdash; not by a machine that talks, but by the strange and clarifying exercise of teaching machines to speak the impossible.</p>
+
+    <div class="refs" id="references">
+      <h2>References</h2>
+      <ol>
+        <li id="r1">Chomsky, N., Roberts, I., &amp; Watumull, J. (2023). &ldquo;The False Promise of ChatGPT.&rdquo; <em>The New York Times</em>, March 8, 2023. <a href="https://www.nytimes.com/2023/03/08/opinion/noam-chomsky-chatgpt-ai.html">nytimes.com</a></li>
+        <li id="r2">Chomsky, N. (1965). <em>Aspects of the Theory of Syntax</em>. Cambridge, MA: MIT Press.</li>
+        <li id="r3">Mitchell, J., &amp; Bowers, J. (2020). &ldquo;Priorless Recurrent Networks Learn Curiously.&rdquo; <em>Proceedings of COLING 2020</em>, 5147&ndash;5158. <a href="https://aclanthology.org/2020.coling-main.451/">aclanthology.org</a></li>
+        <li id="r4">Kallini, J., Papadimitriou, I., Futrell, R., Mahowald, K., &amp; Potts, C. (2024). &ldquo;Mission: Impossible Language Models.&rdquo; <em>Proceedings of ACL 2024</em> (Best Paper Award). <a href="https://aclanthology.org/2024.acl-long.787/">aclanthology.org</a> &middot; arXiv:2401.06416.</li>
+        <li id="r5">Musso, M., Moro, A., Glauche, V., et al. (2003). &ldquo;Broca's area and the language instinct.&rdquo; <em>Nature Neuroscience</em> 6, 774&ndash;781. <a href="https://www.nature.com/articles/nn1077">nature.com</a></li>
+        <li id="r6">Moro, A. (2016). <em>Impossible Languages</em>. Cambridge, MA: MIT Press.</li>
+        <li id="r7">Futrell, R., et al. On information locality in natural language; see also the discussion in <em>Frontiers in Communication</em> (2022). <a href="https://www.frontiersin.org/journals/communication/articles/10.3389/fcomm.2022.657725/full">frontiersin.org</a></li>
+        <li id="r8">Chomsky, N. (1959). &ldquo;Review of B. F. Skinner's <em>Verbal Behavior</em>.&rdquo; <em>Language</em> 35(1), 26&ndash;58.</li>
+        <li id="r9">Pullum, G. K., &amp; Scholz, B. C. (2002). &ldquo;Empirical assessment of stimulus poverty arguments.&rdquo; <em>The Linguistic Review</em> 19, 9&ndash;50. <a href="https://unstable.nl/andreas/ai/langcog/part1/PullumScholzLeadArticle.pdf">PDF</a></li>
+        <li id="r10">Bickerton, D. (1984). &ldquo;The language bioprogram hypothesis.&rdquo; <em>Behavioral and Brain Sciences</em> 7(2), 173&ndash;221.</li>
+        <li id="r11">Tomasello, M. (2003). <em>Constructing a Language: A Usage-Based Theory of Language Acquisition</em>. Cambridge, MA: Harvard University Press.</li>
+        <li id="r12">Brubaker, B. (2025). &ldquo;Can AI Models Show Us How People Learn? Impossible Languages Point a Way.&rdquo; <em>Quanta Magazine</em>, January 13, 2025. <a href="https://www.quantamagazine.org/can-ai-models-show-us-how-people-learn-impossible-languages-point-a-way-20250113/">quantamagazine.org</a></li>
+        <li id="r13">Hunter, T. (2024). &ldquo;Kallini et al. (2024) do not compare impossible languages with constituency-based ones.&rdquo; arXiv:2410.12271. <a href="https://arxiv.org/abs/2410.12271">arxiv.org</a></li>
+        <li id="r14">&ldquo;What Is Machine Learning?&rdquo; <em>Quanta Magazine</em> (2024); background on neural-network training. <a href="https://www.quantamagazine.org/what-is-machine-learning-20240708/">quantamagazine.org</a></li>
+        <li id="r15">Warstadt, A., &amp; Bowman, S. R. (2022). &ldquo;What artificial neural networks can tell us about human language acquisition.&rdquo; In <em>Algebraic Structures in Natural Language</em>. (On data efficiency and the BabyLM program.)</li>
+        <li id="r16">Saffran, J. R., Aslin, R. N., &amp; Newport, E. L. (1996). &ldquo;Statistical learning by 8-month-old infants.&rdquo; <em>Science</em> 274, 1926&ndash;1928.</li>
+        <li id="r17">Goldberg, A. E. (2006). <em>Constructions at Work: The Nature of Generalization in Language</em>. Oxford: Oxford University Press.</li>
+        <li id="r18">&ldquo;Do impossible languages exist?&rdquo; <em>Het Talige Brein</em> (Max Planck Institute / Donders Institute blog), January 20, 2020. <a href="https://taalenhersenen.wordpress.com/2020/01/20/do-impossible-languages-exist/">taalenhersenen.wordpress.com</a></li>
+      </ol>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:#e3dccb">Authorship.</strong> Researched and written collaboratively by Surendran and Claude (Anthropic). The original question, framing, and editorial direction are Surendran's; the wider research, drafting, and synthesis were carried out together with Claude.</p>
+    <p>An essay written for general readers and the curious across disciplines. Citations are numbered in-text and resolve to the reference list above. Inline claims of fact are drawn from the cited primary sources; interpretive judgements are flagged as such in the text.</p>
+    <p>&copy; 2026 &mdash; prepared for sharing. Reuse with attribution.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.10.0/dist/mermaid.min.js" integrity="sha384-PY+AFiXLIHkR5jE4nk0JwPQQmmQlT4mJXFlgeT4jJeuARaBQBK+nSwwxzrPRAtUM" crossorigin="anonymous"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad:true,
+    securityLevel:'loose',
+    theme:'base',
+    themeVariables:{
+      background:'#171b21',
+      primaryColor:'#1c2128',
+      primaryTextColor:'#e9e3d6',
+      primaryBorderColor:'#cda45f',
+      lineColor:'#e0915a',
+      secondaryColor:'#10202a',
+      tertiaryColor:'#211912',
+      fontFamily:'Helvetica Neue, Arial, sans-serif',
+      fontSize:'18px'
+    },
+    flowchart:{curve:'basis', padding:14}
+  });
+</script>
+
+</body>
+</html>
