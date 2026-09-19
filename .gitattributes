@@ -1,0 +1,20 @@
+# Line endings: LF everywhere, in the index AND in the working tree.
+#
+# Why this file exists: core.autocrlf is true at SYSTEM level on the authoring
+# machine. Without this, a fresh clone checks out CRLF while the local source
+# mirror (Local_Prep_Source\, which lives outside this repo) stays LF, so the
+# two trees stop being byte-identical although nobody edited anything. The
+# sync tooling compares them byte-for-byte and would then refuse to run.
+#
+# text=auto still auto-detects binaries; the explicit list below is
+# belt-and-braces so an image can never be renormalised.
+
+* text=auto eol=lf
+
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.pdf  binary
