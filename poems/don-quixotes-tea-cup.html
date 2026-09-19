@@ -601,38 +601,80 @@ AI കാലത്ത് അത്യന്താപേക്ഷിതമാക�
 
   <footer>ചിത്രം: രചയിതാവ് കൃതയിൽ (Krita) വരച്ചത്</footer>
 </div>
-<!-- Comments — giscus · Task_002 Q1 · theme at /giscus-theme.css -->
+<!-- BEGIN responses · Task_002 Q6 -->
 <style>
-  .comments{max-width:var(--maxw,760px); margin:0 auto; padding:0 1.4rem 4rem}
-  .comments h2{font-weight:600; font-size:1rem; letter-spacing:1px;
-    color:var(--gold,var(--oxblood,#cda45f)); margin:0 0 .6rem}
-  .comments .note{font-size:.92rem; line-height:1.8;
-    color:var(--muted,var(--ink-soft,#a39a8a)); margin:0 0 1.6rem}
-  .comments .giscus{border-top:1px solid var(--line,var(--rule,#2b3038)); padding-top:1.6rem}
+  .respond{max-width:var(--maxw,760px); margin:0 auto; padding:0 1.4rem 4rem}
+  .respond h2{font-weight:600; font-size:1rem; letter-spacing:1px;
+    color:var(--gold,var(--oxblood,#cda45f));
+    margin:0 0 .6rem; padding-top:1.8rem; border-top:1px solid var(--line,var(--rule,#2b3038))}
+  .respond .note{font-size:.92rem; line-height:1.8;
+    color:var(--muted,var(--ink-soft,#a39a8a)); margin:0 0 1.4rem}
+  .respond label{display:block; font-size:.88rem;
+    color:var(--muted,var(--ink-soft,#a39a8a)); margin:0 0 .35rem}
+  .respond label .opt{font-size:.92em; opacity:.85}
+  .respond input,.respond textarea{display:block; width:100%; margin:0 0 1.1rem;
+    padding:.7rem .85rem; background:var(--card,rgba(255,255,255,.035));
+    color:var(--ink,#e9e3d6); border:1px solid var(--line,var(--rule,#2b3038));
+    border-radius:8px; font-family:inherit; font-size:1rem; line-height:1.7}
+  .respond textarea{resize:vertical; min-height:8.5rem}
+  .respond input:focus-visible,.respond textarea:focus-visible,
+  .respond button:focus-visible{outline:2px solid var(--accent,var(--oxblood-dk,#e0915a));
+    outline-offset:2px}
+  .respond button{font-weight:600; font-size:.95rem; padding:.62rem 1.7rem; border:0;
+    border-radius:999px; cursor:pointer; color:#1a1208; font-family:inherit;
+    background:var(--accent,var(--oxblood-dk,#e0915a)); transition:background .2s ease}
+  .respond button:hover{background:var(--gold,var(--oxblood,#cda45f))}
+  .respond button[disabled]{opacity:.6; cursor:default}
+  @media (prefers-reduced-motion: reduce){.respond button{transition:none}}
+  .respond .gotcha{position:absolute; left:-9999px; width:1px; height:1px; opacity:0}
+  .respond .sent{color:var(--gold,var(--oxblood,#cda45f)); font-style:italic; margin:0}
 </style>
-<section class="comments" aria-labelledby="comments-heading">
-  <h2 id="comments-heading">പ്രതികരണങ്ങൾ</h2>
-  <p class="note">ഗൗരവത്തോടെ പ്രതികരിക്കാൻ ആഗ്രഹിക്കുന്നവർക്കായി ഈ ഇടം നിലനിർത്താൻ വേണ്ടി
-    അഭിപ്രായങ്ങൾ GitHub വഴിയാണ് ചേർക്കുന്നത്. അതിനാൽ അഭിപ്രായങ്ങളെഴുതുന്നവർ സ്വന്തമായി
-    (പൂർണമായും ഫ്രീ ആയ, മിനിറ്റുകൾക്കുള്ളിൽ ചെയ്യാവുന്ന) ഒരു GitHub അക്കൗണ്ട്
-    എടുക്കണമെന്നു വിനീതമായി അഭ്യർത്ഥിക്കുന്നു.</p>
-  <script src="https://giscus.app/client.js"
-          data-repo="surendran2024/surendran2024.github.io"
-          data-repo-id="R_kgDOTTXO5g"
-          data-category="Announcements"
-          data-category-id="DIC_kwDOTTXO5s4DF60I"
-          data-mapping="pathname"
-          data-strict="1"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="top"
-          data-theme="https://surendran2024.github.io/giscus-theme.css"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-  </script>
+<section class="respond" aria-labelledby="respond-heading">
+  <h2 id="respond-heading">എനിക്കെഴുതുക</h2>
+  <p class="note">നിങ്ങളുടെ പ്രതികരണങ്ങൾ എനിക്ക് വളരെ വിലപ്പെട്ടതാണ്.
+    പ്രതികരിക്കാൻ ആഗ്രഹിക്കുന്നവർ ദയവായി ഇവിടെ കൊടുത്തിട്ടുള്ള ഇമെയിൽ ഫോം ഉപയോഗിക്കുക.
+    നിങ്ങളുടെ ഉചിതമായ അഭിപ്രായങ്ങൾ ഇവിടെ പ്രസിദ്ധീകരിക്കുന്നതാണ്.</p>
+  <form id="respond-form" action="https://formspree.io/f/xwlppjew" method="POST">
+    <label for="r-name">പേര്</label>
+    <input id="r-name" name="name" type="text" autocomplete="name" required>
+    <label for="r-email">ഇ-മെയിൽ <span class="opt">— ഐച്ഛികം, മറുപടി അയയ്ക്കാൻ മാത്രം</span></label>
+    <input id="r-email" name="email" type="email" autocomplete="email">
+    <label for="r-message">നിങ്ങളുടെ പ്രതികരണം</label>
+    <textarea id="r-message" name="message" rows="7" required></textarea>
+    <input type="hidden" name="_subject" value="Response — /poems/don-quixotes-tea-cup.html">
+    <input type="hidden" name="page" value="/poems/don-quixotes-tea-cup.html">
+    <input class="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+           aria-hidden="true">
+    <button type="submit">അയയ്ക്കുക</button>
+  </form>
+  <p class="sent" id="respond-sent" hidden>നന്ദി — എനിക്ക് ലഭിച്ചു.</p>
 </section>
+<script>
+/* Progressive enhancement only. With JavaScript off the form posts normally to
+   Formspree and the reader sees Formspree's own thank-you page. */
+(function () {
+  var form = document.getElementById('respond-form');
+  if (!form || !window.fetch) { return; }
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var button = form.querySelector('button');
+    button.disabled = true;
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    }).then(function (response) {
+      if (!response.ok) { throw new Error('rejected'); }
+      form.hidden = true;
+      document.getElementById('respond-sent').hidden = false;
+    }).catch(function () {
+      button.disabled = false;
+      form.submit();
+    });
+  });
+})();
+</script>
+<!-- END responses -->
 <script data-goatcounter="https://surendran2024.goatcounter.com/count"
         async src="https://gc.zgo.at/count.js"></script>
 </body>
