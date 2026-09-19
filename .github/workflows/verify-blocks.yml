@@ -1,0 +1,23 @@
+name: Verify pages
+
+# Every published page must carry the GoatCounter snippet and the response
+# form. This runs on every push, so a page cannot quietly ship without them.
+# It does not gate the GitHub Pages deployment; it fails the check and emails
+# the repository owner.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every page carries analytics and the response form
+        run: python3 .github/verify_blocks.py
