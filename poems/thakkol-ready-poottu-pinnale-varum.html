@@ -215,7 +215,7 @@
   .respond{max-width:var(--maxw,760px); margin:0 auto; padding:0 1.4rem 4rem}
   .respond h2{font-weight:600; font-size:1rem; letter-spacing:1px;
     color:var(--gold,var(--oxblood,#cda45f));
-    margin:0 0 .6rem; padding-top:1.8rem; border-top:1px solid var(--line,var(--rule,#2b3038))}
+    margin:0 0 .6rem}
   .respond .note{font-size:.92rem; line-height:1.8;
     color:var(--muted,var(--ink-soft,#a39a8a)); margin:0 0 1.4rem}
   .respond label{display:block; font-size:.88rem;
@@ -237,8 +237,22 @@
   @media (prefers-reduced-motion: reduce){.respond button{transition:none}}
   .respond .gotcha{position:absolute; left:-9999px; width:1px; height:1px; opacity:0}
   .respond .sent{color:var(--gold,var(--oxblood,#cda45f)); font-style:italic; margin:0}
+  .published{max-width:var(--maxw,760px); margin:0 auto; padding:0 1.4rem}
+  .published h2{font-weight:600; letter-spacing:1px; color:var(--gold,var(--oxblood,#cda45f));
+    margin:0 0 1.2rem; padding-top:1.8rem; border-top:1px solid var(--line,var(--rule,#2b3038))}
+  .published figure{margin:0 0 1.8rem; padding:1.1rem 1.3rem; border-radius:10px;
+    background:var(--card,rgba(255,255,255,.03));
+    border:1px solid var(--line,var(--rule,#2b3038))}
+  .published figure p{margin:0 0 .9rem; white-space:pre-line}
+  .published figure p:last-of-type{margin-bottom:.6rem}
+  .published figcaption{color:var(--muted,var(--ink-soft,#a39a8a)); font-style:italic;
+    font-size:.88rem}
+  .respond h2{padding-top:1.8rem; border-top:1px solid var(--line,var(--rule,#2b3038))}
+  .published + .respond h2{padding-top:0; border-top:0}
 </style>
-<section class="respond" aria-labelledby="respond-heading">
+<section class="respond" aria-labelledby="respond-heading"
+         data-page="/poems/thakkol-ready-poottu-pinnale-varum.html"
+         data-published-heading="പ്രതികരണങ്ങൾ">
   <h2 id="respond-heading">എനിക്കെഴുതുക</h2>
   <p class="note">നിങ്ങളുടെ പ്രതികരണങ്ങൾ എനിക്ക് വളരെ വിലപ്പെട്ടതാണ്.
     പ്രതികരിക്കാൻ ആഗ്രഹിക്കുന്നവർ ദയവായി ഇവിടെ കൊടുത്തിട്ടുള്ള ഇമെയിൽ ഫോം ഉപയോഗിക്കുക.
@@ -281,6 +295,39 @@
       form.submit();
     });
   });
+})();
+
+/* Published responses. Nothing renders unless responses.json names this page.
+   Text is written with textContent, never innerHTML, so a reader's words can
+   never inject markup into the page. */
+(function () {
+  var section = document.querySelector('.respond');
+  if (!section || !window.fetch) { return; }
+  var key = section.getAttribute('data-page');
+  fetch('/responses.json', { cache: 'no-cache' }).then(function (r) {
+    return r.ok ? r.json() : null;
+  }).then(function (data) {
+    var items = data && data[key];
+    if (!Array.isArray(items) || !items.length) { return; }
+    var wrap = document.createElement('div');
+    wrap.className = 'published';
+    var heading = document.createElement('h2');
+    heading.textContent = section.getAttribute('data-published-heading');
+    wrap.appendChild(heading);
+    items.forEach(function (item) {
+      var figure = document.createElement('figure');
+      String(item.text || '').split(/\n{2,}/).forEach(function (para) {
+        var p = document.createElement('p');
+        p.textContent = para;
+        figure.appendChild(p);
+      });
+      var caption = document.createElement('figcaption');
+      caption.textContent = [item.name, item.date].filter(Boolean).join(' · ');
+      figure.appendChild(caption);
+      wrap.appendChild(figure);
+    });
+    section.parentNode.insertBefore(wrap, section);
+  }).catch(function () {});
 })();
 </script>
 <!-- END responses -->

@@ -1,0 +1,16 @@
+{
+  "_readme": [
+    "Approved reader responses. A page shows only the responses listed under its own URL key.",
+    "To publish one: add an object to the array for that page. Create the key if it is not here.",
+    "Keys starting with an underscore are ignored by the site.",
+    "Blank lines inside text start a new paragraph. Use \n\n for that.",
+    "Nothing else on the site needs changing. Save this file and the page updates in about a minute."
+  ],
+  "_example": [
+    {
+      "name": "A reader",
+      "date": "2026-09-19",
+      "text": "First paragraph of what they wrote.\n\nSecond paragraph."
+    }
+  ]
+}
